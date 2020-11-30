@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sunshine
 {
-    public partial class Form1 : Form
+    public partial class AccountInfo : Form
     {
-        public Form1()
+        public AccountInfo()
         {
             InitializeComponent();
         }
