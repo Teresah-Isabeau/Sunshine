@@ -84,6 +84,18 @@
     <Compile Include="Welcome.Designer.cs">
       <DependentUpon>Welcome.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AccountInfo.resx">
+      <DependentUpon>AccountInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateAccount.resx">
+      <DependentUpon>CreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -93,6 +105,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reward.resx">
+      <DependentUpon>Reward.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Welcome.resx">
+      <DependentUpon>Welcome.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
