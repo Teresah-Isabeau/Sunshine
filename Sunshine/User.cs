@@ -16,18 +16,18 @@ namespace Sunshine
         private string country;
         private string counter;
 
-        public User(string name, int age, int skinType, string email, string password, string country, string counter)
+        public User(string email, string password)
         {
-            this.name = name;
-            this.age = age;
-            this.skinType = skinType;
             this.email = email;
             this.password = password;
-            this.country = country;
-            this.counter = counter;
+
         }
 
         public void newAccount()
+        {
+
+        }
+        public void userFacts(int name, int age, int skinType, int country, int counter)
         {
 
         }

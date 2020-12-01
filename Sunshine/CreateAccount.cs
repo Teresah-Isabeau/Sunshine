@@ -16,5 +16,11 @@ namespace Sunshine
         {
             InitializeComponent();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            User newUserAccount = new User(tbEmail.Text, tbPassword.Text);
+            newUserAccount.newAccount();
+        }
     }
 }
