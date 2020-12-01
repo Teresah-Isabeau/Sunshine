@@ -6,40 +6,61 @@ using System.Threading.Tasks;
 
 namespace Sunshine
 {
+
+
     public class User
     {
         private string name;
         private int age;
         private int skinType;
-        private string email;
-        private string password;
+        private readonly string email;
+        private readonly string password;
         private string country;
         private string counter;
+        private string passwordCheck;
+        
 
         public User(string email, string password)
         {
             this.email = email;
             this.password = password;
-
         }
-
-        public void newAccount()
+        public User()
         {
 
         }
-        public void userFacts(int name, int age, int skinType, int country, int counter)
-        {
-
-        }
-
-        public bool loginCheck()
+        public void UserFacts(int name, int age, int skinType, int country, int counter)
         {
 
         }
 
-        public string formula()
+        //checking if email and password are correct
+        //checking in database
+        public bool LoginCheck(string inputEmail, string inputPass)
+        {
+            bool loginCheck = false;
+            if (inputEmail == email && inputPass == password)
+            {
+                loginCheck = true;
+            }
+            return loginCheck;
+        }
+
+        /*
+        public string Formula()
         {
 
+        }
+        */
+        public bool PasswordCheck(string passwordCheck)
+        {
+            bool logCheck = false;
+            if (password == passwordCheck)
+            {
+                logCheck = true;
+
+            }
+            return logCheck;
         }
         
     }

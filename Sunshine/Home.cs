@@ -30,5 +30,13 @@ namespace Sunshine
             Reward form6 = new Reward();
             form6.Show();
         }
+
+        private void btLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Welcome form1 = new Welcome();
+            form1.Show();
+
+        }
     }
 }
