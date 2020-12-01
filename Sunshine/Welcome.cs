@@ -16,5 +16,12 @@ namespace Sunshine
         {
             InitializeComponent();
         }
+
+        private void btnContinue_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login form2 = new Login();
+            form2.Show(); 
+        }
     }
 }

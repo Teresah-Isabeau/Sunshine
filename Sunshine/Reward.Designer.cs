@@ -34,6 +34,7 @@
             this.lbDonate = new System.Windows.Forms.Label();
             this.btnGet = new System.Windows.Forms.Button();
             this.btnDonate = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbRewards
@@ -90,11 +91,22 @@
             this.btnDonate.Text = "Donate";
             this.btnDonate.UseVisualStyleBackColor = true;
             // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(23, 23);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(75, 41);
+            this.btnBack.TabIndex = 6;
+            this.btnBack.Text = "Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // Reward
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDonate);
             this.Controls.Add(this.btnGet);
             this.Controls.Add(this.lbDonate);
@@ -116,5 +128,6 @@
         private System.Windows.Forms.Label lbDonate;
         private System.Windows.Forms.Button btnGet;
         private System.Windows.Forms.Button btnDonate;
+        private System.Windows.Forms.Button btnBack;
     }
 }
