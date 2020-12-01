@@ -19,6 +19,13 @@ namespace Sunshine
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            AccountInfo form4 = new AccountInfo();
+            form4.Show();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
             User newUserAccount = new User(tbEmail.Text, tbPassword.Text);
             newUserAccount.newAccount();
         }
