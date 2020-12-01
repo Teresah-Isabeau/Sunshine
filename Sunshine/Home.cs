@@ -16,5 +16,19 @@ namespace Sunshine
         {
             InitializeComponent();
         }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AccountInfo form4 = new AccountInfo();
+            form4.Show();
+        }
+
+        private void btnPoints_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Reward form6 = new Reward();
+            form6.Show();
+        }
     }
 }

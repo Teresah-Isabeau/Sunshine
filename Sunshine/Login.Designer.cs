@@ -86,6 +86,7 @@
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnNewAccount
             // 
@@ -95,6 +96,7 @@
             this.btnNewAccount.TabIndex = 6;
             this.btnNewAccount.Text = "New Account";
             this.btnNewAccount.UseVisualStyleBackColor = true;
+            this.btnNewAccount.Click += new System.EventHandler(this.btnNewAccount_Click);
             // 
             // Login
             // 
