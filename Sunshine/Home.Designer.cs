@@ -47,6 +47,7 @@
             this.btnPoints.TabIndex = 0;
             this.btnPoints.Text = "Points";
             this.btnPoints.UseVisualStyleBackColor = true;
+            this.btnPoints.Click += new System.EventHandler(this.btnPoints_Click);
             // 
             // lbHome
             // 
@@ -118,6 +119,7 @@
             this.btnProfile.TabIndex = 8;
             this.btnProfile.Text = "Profile";
             this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // Home
             // 
