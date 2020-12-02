@@ -14,6 +14,11 @@ namespace Sunshine
     {
         string email;
         string password;
+
+        public AccountInfo()
+        {
+        }
+
         public AccountInfo(string email, string password )
         {
             InitializeComponent();
