@@ -19,13 +19,19 @@ namespace Sunshine
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AccountInfo form4 = new AccountInfo();
-            form4.Show();
+            User newAccount = new User(tbEmail.Text, tbPassword.Text);
+            
+            if (newAccount.PasswordCheck(tbConfirm.Text))
+            {
+                this.Hide();
+                AccountInfo form4 = new AccountInfo(tbEmail.Text, tbPassword.Text);
+                form4.Show();
 
-            User newUserAccount = new User(tbEmail.Text, tbPassword.Text);
-            newUserAccount.newAccount();
+            }
+            else
+            {
+                MessageBox.Show("Passwords aren't the same, please try again.");
+            }
         }
-        
     }
 }

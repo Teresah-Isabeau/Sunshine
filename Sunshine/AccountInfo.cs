@@ -12,9 +12,13 @@ namespace Sunshine
 {
     public partial class AccountInfo : Form
     {
-        public AccountInfo()
+        string email;
+        string password;
+        public AccountInfo(string email, string password )
         {
             InitializeComponent();
+            this.email = email;
+            this.password = password;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

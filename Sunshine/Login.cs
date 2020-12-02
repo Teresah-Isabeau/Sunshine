@@ -19,9 +19,20 @@ namespace Sunshine
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Home form5 = new Home();
-            form5.Show();
+
+            User userLogin = new User();
+            
+            if (userLogin.LoginCheck(tbEmail.Text, tbPassword.Text))
+            {
+                this.Hide();
+                Home form5 = new Home();
+                form5.Show();
+            }
+            else
+            {
+                MessageBox.Show("Wrong email or password. Please try again");
+            }
+
         }
 
         private void btnNewAccount_Click(object sender, EventArgs e)
