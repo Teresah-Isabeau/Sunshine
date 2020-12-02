@@ -11,35 +11,35 @@ namespace Sunshine
     public class User
     {
         private string name;
-        private int age;
-        private int skinType;
-        private readonly string email;
-        private readonly string password;
-        private string country;
+        private decimal age;
+        private string skinType;
+        private string loginEmail; 
+        private string loginPassword;
+        private string country; 
         private string counter;
-        private string passwordCheck;
-        
-
         public User(string email, string password)
         {
-            this.email = email;
-            this.password = password;
+            this.loginEmail = email;
+            this.loginPassword = password;
         }
         public User()
         {
 
         }
-        public void UserFacts(int name, int age, int skinType, int country, int counter)
+        public void UserFacts(string name, decimal age, string country, string skinType)
         {
-
+            this.name = name;
+            this.age = age;
+            this.skinType = skinType;
+            this.country = country;
         }
 
         //checking if email and password are correct
         //checking in database
-        public bool LoginCheck(string inputEmail, string inputPass)
+        public bool LoginCheck(string inputEmail, string inputPass, string accountEmail, string accountPassword)
         {
             bool loginCheck = false;
-            if (inputEmail == email && inputPass == password)
+            if (inputEmail == accountEmail && inputPass == accountPassword)
             {
                 loginCheck = true;
             }
@@ -55,7 +55,7 @@ namespace Sunshine
         public bool PasswordCheck(string passwordCheck)
         {
             bool logCheck = false;
-            if (password == passwordCheck)
+            if (loginPassword == passwordCheck)
             {
                 logCheck = true;
 

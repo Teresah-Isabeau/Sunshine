@@ -14,6 +14,7 @@ namespace Sunshine
     {
         public Home()
         {
+
             InitializeComponent();
         }
 

@@ -12,6 +12,7 @@ namespace Sunshine
 {
     public partial class Reward : Form
     {
+
         public Reward()
         {
             InitializeComponent();

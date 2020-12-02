@@ -12,6 +12,11 @@ namespace Sunshine
 {
     public partial class CreateAccount : Form
     {
+        //spublic static to be able to access it when to use login
+        //checks what user filled in at create account equals login
+        public static string accountEmail;
+        public static string accountPassword;
+
         public CreateAccount()
         {
             InitializeComponent();
@@ -19,12 +24,14 @@ namespace Sunshine
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            User newAccount = new User(tbEmail.Text, tbPassword.Text);
+            accountEmail = tbEmail.Text;
+            accountPassword = tbPassword.Text;
+            User newAccount = new User(accountEmail, accountPassword);
             
             if (newAccount.PasswordCheck(tbConfirm.Text))
             {
                 this.Hide();
-                AccountInfo form4 = new AccountInfo(tbEmail.Text, tbPassword.Text);
+                AccountInfo form4 = new AccountInfo();
                 form4.Show();
 
             }

@@ -12,17 +12,18 @@ namespace Sunshine
 {
     public partial class AccountInfo : Form
     {
-        string email;
-        string password;
-        public AccountInfo(string email, string password )
+
+        public AccountInfo()
         {
             InitializeComponent();
-            this.email = email;
-            this.password = password;
+
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
+            User userInfo = new User();
+            userInfo.UserFacts(tbName.Text, nudAge.Value, cbCountry.Text, cbSkin.Text);
+
             this.Hide();
             Home form5 = new Home();
             form5.Show();
