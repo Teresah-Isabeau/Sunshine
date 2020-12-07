@@ -12,7 +12,7 @@ namespace Sunshine
 {
     public partial class CreateAccount : Form
     {
-        //spublic static to be able to access it when to use login
+        //public static to be able to access it when to use login
         //checks what user filled in at create account equals login
         public static string accountEmail;
         public static string accountPassword;

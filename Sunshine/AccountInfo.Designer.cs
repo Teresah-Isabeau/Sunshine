@@ -44,53 +44,59 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(195, 52);
+            this.label1.Location = new System.Drawing.Point(146, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 17);
+            this.label1.Size = new System.Drawing.Size(196, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Lets get started with filling in some facts!";
             // 
             // lbName
             // 
             this.lbName.AutoSize = true;
-            this.lbName.Location = new System.Drawing.Point(144, 111);
+            this.lbName.Location = new System.Drawing.Point(108, 90);
+            this.lbName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbName.Name = "lbName";
-            this.lbName.Size = new System.Drawing.Size(45, 17);
+            this.lbName.Size = new System.Drawing.Size(35, 13);
             this.lbName.TabIndex = 1;
             this.lbName.Text = "Name";
             // 
             // lbAge
             // 
             this.lbAge.AutoSize = true;
-            this.lbAge.Location = new System.Drawing.Point(144, 151);
+            this.lbAge.Location = new System.Drawing.Point(108, 123);
+            this.lbAge.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbAge.Name = "lbAge";
-            this.lbAge.Size = new System.Drawing.Size(33, 17);
+            this.lbAge.Size = new System.Drawing.Size(26, 13);
             this.lbAge.TabIndex = 2;
             this.lbAge.Text = "Age";
             // 
             // lbCountry
             // 
             this.lbCountry.AutoSize = true;
-            this.lbCountry.Location = new System.Drawing.Point(144, 190);
+            this.lbCountry.Location = new System.Drawing.Point(108, 154);
+            this.lbCountry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCountry.Name = "lbCountry";
-            this.lbCountry.Size = new System.Drawing.Size(57, 17);
+            this.lbCountry.Size = new System.Drawing.Size(43, 13);
             this.lbCountry.TabIndex = 3;
             this.lbCountry.Text = "Country";
             // 
             // lbSkin
             // 
             this.lbSkin.AutoSize = true;
-            this.lbSkin.Location = new System.Drawing.Point(144, 226);
+            this.lbSkin.Location = new System.Drawing.Point(108, 184);
+            this.lbSkin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSkin.Name = "lbSkin";
-            this.lbSkin.Size = new System.Drawing.Size(71, 17);
+            this.lbSkin.Size = new System.Drawing.Size(55, 13);
             this.lbSkin.TabIndex = 4;
             this.lbSkin.Text = "Skin Type";
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(299, 347);
+            this.btnConfirm.Location = new System.Drawing.Point(224, 282);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(83, 48);
+            this.btnConfirm.Size = new System.Drawing.Size(62, 39);
             this.btnConfirm.TabIndex = 5;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
@@ -98,39 +104,43 @@
             // 
             // tbName
             // 
-            this.tbName.Location = new System.Drawing.Point(299, 105);
+            this.tbName.Location = new System.Drawing.Point(224, 85);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(120, 22);
+            this.tbName.Size = new System.Drawing.Size(91, 20);
             this.tbName.TabIndex = 6;
             // 
             // nudAge
             // 
-            this.nudAge.Location = new System.Drawing.Point(299, 146);
+            this.nudAge.Location = new System.Drawing.Point(224, 119);
+            this.nudAge.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.nudAge.Name = "nudAge";
-            this.nudAge.Size = new System.Drawing.Size(120, 22);
+            this.nudAge.Size = new System.Drawing.Size(90, 20);
             this.nudAge.TabIndex = 7;
             // 
             // cbCountry
             // 
             this.cbCountry.FormattingEnabled = true;
-            this.cbCountry.Location = new System.Drawing.Point(299, 181);
+            this.cbCountry.Location = new System.Drawing.Point(224, 147);
+            this.cbCountry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbCountry.Name = "cbCountry";
-            this.cbCountry.Size = new System.Drawing.Size(121, 24);
-            this.cbCountry.TabIndex = 8;
+            this.cbCountry.Size = new System.Drawing.Size(92, 21);
+            this.cbCountry.TabIndex = 100;
             // 
             // cbSkin
             // 
             this.cbSkin.FormattingEnabled = true;
-            this.cbSkin.Location = new System.Drawing.Point(299, 219);
+            this.cbSkin.Location = new System.Drawing.Point(224, 178);
+            this.cbSkin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbSkin.Name = "cbSkin";
-            this.cbSkin.Size = new System.Drawing.Size(121, 24);
+            this.cbSkin.Size = new System.Drawing.Size(92, 21);
             this.cbSkin.TabIndex = 9;
             // 
             // AccountInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.cbSkin);
             this.Controls.Add(this.cbCountry);
             this.Controls.Add(this.nudAge);
@@ -141,6 +151,7 @@
             this.Controls.Add(this.lbAge);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AccountInfo";
             this.Text = "AccountInfo";
             ((System.ComponentModel.ISupportInitialize)(this.nudAge)).EndInit();
