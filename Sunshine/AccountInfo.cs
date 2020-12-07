@@ -7,25 +7,53 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Globalization;
 
 namespace Sunshine
 {
     public partial class AccountInfo : Form
     {
-        string email;
-        string password;
-        public AccountInfo(string email, string password )
+        public static decimal age;
+
+        public AccountInfo()
         {
             InitializeComponent();
-            this.email = email;
-            this.password = password;
+            foreach (string item in GetAllCountrysNames())
+            {
+                cbCountry.Items.Add(item);
+            }
+
         }
+        public static List<string> GetAllCountrysNames()
+        {
+            CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
+
+            var rez = cultures.Select(cult => (new RegionInfo(cult.LCID)).DisplayName).Distinct().OrderBy(q => q).ToList();
+
+            return rez;
+        }
+
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Home form5 = new Home();
-            form5.Show();
+            age = nudAge.Value;
+
+            User userInfo = new User(tbName.Text, age, cbCountry.Text, cbSkin.Text);
+
+            if (string.IsNullOrWhiteSpace(tbName.Text) || string.IsNullOrWhiteSpace(cbCountry.Text) || nudAge == null || string.IsNullOrWhiteSpace(cbSkin.Text)) {
+                MessageBox.Show("Please fill in every field");
+            }
+            else
+            {
+                this.Hide();
+                Home form5 = new Home();
+                form5.Show();
+            }
+            
         }
+        private void boxText()
+        {
+        }
+
     }
 }

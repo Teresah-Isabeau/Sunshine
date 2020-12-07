@@ -15,8 +15,28 @@ namespace Sunshine
         public Home()
         {
             InitializeComponent();
+
+
         }
 
+        /// <summary>
+        /// method that gets called when form gets loaded
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Home_Load(object sender, EventArgs e)
+        {
+            User dateToday = new User();
+            lbDate.Text = "Date: " + dateToday.getDate();
+
+
+            timer1.Enabled = true;
+
+            timer1.Interval = 1000;
+
+            User getFactorAdvice = new User();
+            lbSunscreen.Text = "Sunscreen Factor: " + getFactorAdvice.FactorAdvice();
+        }
         private void btnProfile_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -38,5 +58,11 @@ namespace Sunshine
             form1.Show();
 
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbTime.Text = DateTime.Now.ToLongTimeString();
+        }
+
     }
 }

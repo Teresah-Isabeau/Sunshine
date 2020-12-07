@@ -14,6 +14,7 @@ namespace Sunshine
     {
         public Login()
         {
+            
             InitializeComponent();
         }
 
@@ -22,7 +23,7 @@ namespace Sunshine
 
             User userLogin = new User();
             
-            if (userLogin.LoginCheck(tbEmail.Text, tbPassword.Text))
+            if (userLogin.LoginCheck(tbEmail.Text, tbPassword.Text, CreateAccount.accountEmail, CreateAccount.accountPassword))
             {
                 this.Hide();
                 Home form5 = new Home();
