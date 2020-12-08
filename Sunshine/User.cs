@@ -17,9 +17,9 @@ namespace Sunshine
         private string loginEmail; 
         private string loginPassword;
         private string country; 
-        private string counter;
         private string date;
         private string factor;
+        private DateTime endTime;
         
         public User(string email, string password)
         {
@@ -111,6 +111,12 @@ namespace Sunshine
                 factor = "50 or 30";
             }
             return factor;
+        }
+        public void CountdownSunscreen()
+        {
+            var hours = 2; //countdown time
+            var start = DateTime.Now; // Use UtcNow instead of Now
+            endTime = start.AddHours(hours); //endTime is a member, not a local variable
         }
         
         

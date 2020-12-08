@@ -42,6 +42,7 @@
             this.lbTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbSunscreen = new System.Windows.Forms.Label();
+            this.sunscreenTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // btnPoints
@@ -168,6 +169,10 @@
             this.lbSunscreen.TabIndex = 11;
             this.lbSunscreen.Text = "Sunscreen factor: ";
             // 
+            // sunscreenTimer
+            // 
+            this.sunscreenTimer.Tick += new System.EventHandler(this.sunscreenTimer_Tick);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,5 +214,6 @@
         private System.Windows.Forms.Label lbTime;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbSunscreen;
+        private System.Windows.Forms.Timer sunscreenTimer;
     }
 }
