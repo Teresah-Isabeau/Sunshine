@@ -21,27 +21,57 @@ namespace Sunshine
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            //string email = tbEmail.Text;
-            //string password = tbPassword.Text;
+            string email = tbEmail.Text;
+            string password = tbPassword.Text;
             //string confirmPassword = tbConfirm.Text;
 
-            Database database = new Database();
+            Database objectDatabase = new Database();
 
-            User newAccount = new User(tbEmail.Text, tbPassword.Text);
-            
-            if (newAccount.PasswordCheck(tbConfirm.Text))
+            /*User newAccount = new User(tbEmail.Text, tbPassword.Text);
+
+             if (newAccount.PasswordCheck(tbConfirm.Text))
+             {
+                 this.Hide();
+                 AccountInfo form4 = new AccountInfo(tbEmail.Text, tbPassword.Text);
+                 form4.Show();
+
+             }
+             else
+             {
+                 MessageBox.Show("Passwords aren't the same, please try again.");
+             }*/
+
+            if (email.Equals(""))
             {
-                this.Hide();
-                AccountInfo form4 = new AccountInfo(tbEmail.Text, tbPassword.Text);
-                form4.Show();
-
+                MessageBox.Show("Please enter your Email");
             }
+
+            else if (password.Equals(""))
+            {
+                MessageBox.Show("Please enter your password");
+            }
+
             else
             {
-                MessageBox.Show("Passwords aren't the same, please try again.");
+                SqlCommand insertCommand = new SqlCommand("insert into users(email , password) values(@gebruikersnaam, @Wachtwoord)");
+                
+                insertCommand.Parameters.AddWithValue("@gebruikersnaam", email);
+                insertCommand.Parameters.AddWithValue("@Wachtwoord", password);
+                //insertCommand.Parameters.AddWithValue("@confirmPassword, ConfirmPassword");
 
-                SqlCommand insertCommand = new SqlCommand("insert into users(Email, Password, ConfirmPassword) values (@email, @password, @confirmPassword)");
-               // insertCommand.Parameters.AddWithValue("@email, email");
+                int row = objectDatabase.executeQuery(insertCommand);
+
+                if(row == 1)
+                {
+                    this.Hide();
+                    AccountInfo form4 = new AccountInfo(tbEmail.Text, tbPassword.Text);
+                    form4.Show();
+                }
+
+                else
+                {
+                    MessageBox.Show("An error has ocurred, please try again");
+                }
             }
         }
     }
