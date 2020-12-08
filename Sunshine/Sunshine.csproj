@@ -58,6 +58,7 @@
     <Compile Include="CreateAccount.Designer.cs">
       <DependentUpon>CreateAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataBase.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
