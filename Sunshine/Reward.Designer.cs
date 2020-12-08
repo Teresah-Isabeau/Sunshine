@@ -40,62 +40,70 @@
             // lbRewards
             // 
             this.lbRewards.AutoSize = true;
-            this.lbRewards.Location = new System.Drawing.Point(94, 151);
+            this.lbRewards.Location = new System.Drawing.Point(70, 123);
+            this.lbRewards.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRewards.Name = "lbRewards";
-            this.lbRewards.Size = new System.Drawing.Size(63, 17);
+            this.lbRewards.Size = new System.Drawing.Size(49, 13);
             this.lbRewards.TabIndex = 0;
             this.lbRewards.Text = "Rewards";
             // 
             // lbPoints
             // 
             this.lbPoints.AutoSize = true;
-            this.lbPoints.Location = new System.Drawing.Point(313, 88);
+            this.lbPoints.Location = new System.Drawing.Point(235, 72);
+            this.lbPoints.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPoints.Name = "lbPoints";
-            this.lbPoints.Size = new System.Drawing.Size(47, 17);
+            this.lbPoints.Size = new System.Drawing.Size(36, 13);
             this.lbPoints.TabIndex = 1;
             this.lbPoints.Text = "Points";
             // 
             // lbCoupon
             // 
             this.lbCoupon.AutoSize = true;
-            this.lbCoupon.Location = new System.Drawing.Point(94, 186);
+            this.lbCoupon.Location = new System.Drawing.Point(70, 151);
+            this.lbCoupon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCoupon.Name = "lbCoupon";
-            this.lbCoupon.Size = new System.Drawing.Size(57, 17);
+            this.lbCoupon.Size = new System.Drawing.Size(44, 13);
             this.lbCoupon.TabIndex = 2;
             this.lbCoupon.Text = "Coupon";
             // 
             // lbDonate
             // 
             this.lbDonate.AutoSize = true;
-            this.lbDonate.Location = new System.Drawing.Point(94, 226);
+            this.lbDonate.Location = new System.Drawing.Point(70, 184);
+            this.lbDonate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDonate.Name = "lbDonate";
-            this.lbDonate.Size = new System.Drawing.Size(104, 17);
+            this.lbDonate.Size = new System.Drawing.Size(81, 13);
             this.lbDonate.TabIndex = 3;
             this.lbDonate.Text = "Donate to KWF";
             // 
             // btnGet
             // 
-            this.btnGet.Location = new System.Drawing.Point(283, 179);
+            this.btnGet.Location = new System.Drawing.Point(212, 145);
+            this.btnGet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGet.Name = "btnGet";
-            this.btnGet.Size = new System.Drawing.Size(75, 23);
+            this.btnGet.Size = new System.Drawing.Size(56, 19);
             this.btnGet.TabIndex = 4;
             this.btnGet.Text = "Get";
             this.btnGet.UseVisualStyleBackColor = true;
+            this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
             // 
             // btnDonate
             // 
-            this.btnDonate.Location = new System.Drawing.Point(285, 220);
+            this.btnDonate.Location = new System.Drawing.Point(214, 179);
+            this.btnDonate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDonate.Name = "btnDonate";
-            this.btnDonate.Size = new System.Drawing.Size(75, 23);
+            this.btnDonate.Size = new System.Drawing.Size(56, 19);
             this.btnDonate.TabIndex = 5;
             this.btnDonate.Text = "Donate";
             this.btnDonate.UseVisualStyleBackColor = true;
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(23, 23);
+            this.btnBack.Location = new System.Drawing.Point(17, 19);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(75, 41);
+            this.btnBack.Size = new System.Drawing.Size(56, 33);
             this.btnBack.TabIndex = 6;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -103,9 +111,9 @@
             // 
             // Reward
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDonate);
             this.Controls.Add(this.btnGet);
@@ -113,6 +121,7 @@
             this.Controls.Add(this.lbCoupon);
             this.Controls.Add(this.lbPoints);
             this.Controls.Add(this.lbRewards);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Reward";
             this.Text = "Reward";
             this.ResumeLayout(false);

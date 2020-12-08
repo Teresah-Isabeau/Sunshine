@@ -14,6 +14,8 @@ namespace Sunshine
     {
         User newData = new User();
         DateTime endTime;
+        private bool reapplied = false;
+        private int totalUserPoints;
         public Home()
         {
             InitializeComponent();
@@ -49,7 +51,7 @@ namespace Sunshine
         private void btnPoints_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Reward form6 = new Reward();
+            Reward form6 = new Reward(totalUserPoints);
             form6.Show();
         }
 
@@ -73,9 +75,11 @@ namespace Sunshine
             if (remainingTime < TimeSpan.Zero)
             {
                 sunscreenTimer.Enabled = false;
+                reapplied = true;
                 DialogResult msg = MessageBox.Show("Reapply Sunscreen!");
                 if (msg == DialogResult.OK)
                 {
+                    totalUserPoints = newData.TotalPoints(reapplied);
                     EnableTimer();
 
                 }
