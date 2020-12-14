@@ -14,33 +14,37 @@ namespace Sunshine
         private string name;
         private decimal age;
         private string skinType;
-        private string loginEmail; 
+        private string loginEmail;
         private string loginPassword;
-        private string country; 
-        private string counter;
+        private string country;
         private string date;
         private string factor;
-        
+        private DateTime endTime;
+
+        private int levelPoints;
+        private int totalPoints;
+        private int level;
+
         public User(string email, string password)
         {
             this.loginEmail = email;
             this.loginPassword = password;
         }
-        
+
         //overloading, depending on what needs to be given to the class
-        public  User(string name, decimal age, string country, string skinType)
+        public User(string name, decimal age, string country, string skinType)
         {
             this.name = name;
             this.age = age;
             this.skinType = skinType;
             this.country = country;
         }
-        
+
         public User()
         {
 
         }
-        
+
 
         /// <summary>
         /// method that checks if the login is equal to the password and email of the account
@@ -69,7 +73,7 @@ namespace Sunshine
 
         }
         */
-        
+
         /// <summary>
         /// method to check if the given password is the same as the confirm password
         /// </summary>
@@ -96,7 +100,7 @@ namespace Sunshine
             return date;
 
         }
-        
+
         /// <summary>
         /// method to give the user advice based on skin type.
         /// </summary>
@@ -112,7 +116,36 @@ namespace Sunshine
             }
             return factor;
         }
-        
-        
+        public void CountdownSunscreen()
+        {
+            var hours = 2; //countdown time
+            var start = DateTime.Now; // Use UtcNow instead of Now
+            endTime = start.AddHours(hours); //endTime is a member, not a local variable
+        }
+
+        public int TotalPoints(bool reapplied)
+        {
+            if (reapplied)
+            {
+                totalPoints += 5;
+            }
+
+            return totalPoints;
+        }
+        public int LevelUp()
+        {
+            if (levelPoints == 50)
+            {
+                level += 1;
+                levelPoints = 0;
+            }
+            else
+            {
+                levelPoints += 5;
+            }
+            return level;
+
+        }
     }
 }
+

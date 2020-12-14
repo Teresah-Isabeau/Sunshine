@@ -52,6 +52,7 @@
     <Compile Include="AccountInfo.Designer.cs">
       <DependentUpon>AccountInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Coupon.cs" />
     <Compile Include="CreateAccount.cs">
       <SubType>Form</SubType>
     </Compile>

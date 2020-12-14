@@ -12,10 +12,11 @@ namespace Sunshine
 {
     public partial class Reward : Form
     {
-
-        public Reward()
+        private int totalUserPoints;
+        public Reward(int totalPoints)
         {
             InitializeComponent();
+            this.totalUserPoints = totalPoints;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -23,6 +24,11 @@ namespace Sunshine
             this.Hide();
             Home form5 = new Home();
             form5.Show();
+        }
+
+        private void btnGet_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

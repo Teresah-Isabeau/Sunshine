@@ -12,6 +12,10 @@ namespace Sunshine
 {
     public partial class Home : Form
     {
+        User newData = new User();
+        DateTime endTime;
+        private bool reapplied = false;
+        private int totalUserPoints;
         public Home()
         {
             InitializeComponent();
@@ -26,16 +30,16 @@ namespace Sunshine
         /// <param name="e"></param>
         private void Home_Load(object sender, EventArgs e)
         {
-            User dateToday = new User();
-            lbDate.Text = "Date: " + dateToday.getDate();
+            lbDate.Text = "Date: " + newData.getDate();
 
 
             timer1.Enabled = true;
-
             timer1.Interval = 1000;
 
-            User getFactorAdvice = new User();
-            lbSunscreen.Text = "Sunscreen Factor: " + getFactorAdvice.FactorAdvice();
+
+            lbSunscreen.Text = "Sunscreen Factor: " + newData.FactorAdvice();
+
+            EnableTimer();
         }
         private void btnProfile_Click(object sender, EventArgs e)
         {
@@ -47,7 +51,7 @@ namespace Sunshine
         private void btnPoints_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Reward form6 = new Reward();
+            Reward form6 = new Reward(totalUserPoints);
             form6.Show();
         }
 
@@ -64,5 +68,34 @@ namespace Sunshine
             lbTime.Text = DateTime.Now.ToLongTimeString();
         }
 
+        private void sunscreenTimer_Tick(object sender, EventArgs e)
+        {
+
+            TimeSpan remainingTime = endTime - DateTime.Now;
+            if (remainingTime < TimeSpan.Zero)
+            {
+                sunscreenTimer.Enabled = false;
+                reapplied = true;
+                DialogResult msg = MessageBox.Show("Reapply Sunscreen!");
+                if (msg == DialogResult.OK)
+                {
+                    totalUserPoints = newData.TotalPoints(reapplied);
+                    EnableTimer();
+
+                }
+            }
+            else
+            {
+                string formatted = remainingTime.ToString(@"dd\.hh\:mm\:ss");
+                lbIndication.Text = formatted;
+            }
+        }
+        private void EnableTimer()
+        {
+            var minutes = 1; //countdown time
+            var start = DateTime.Now; // Use UtcNow instead of Now
+            endTime = start.AddMinutes(minutes); //endTime is a member, not a local variable
+            sunscreenTimer.Enabled = true;
+        }
     }
 }
