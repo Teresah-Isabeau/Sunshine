@@ -37,17 +37,35 @@ namespace Sunshine
 
         MySql.Data.MySqlClient.MySqlConnection conn;
         string myConnectionString;
-        static string host = "192.186.172.20";
+        static string host = "192.168.172.20";
+        static string port = "3306";
         static string database = "Sunshine";
-        static string userDB = "TestUser";
+        static string userID = "TestUser";
         static string password = "P@ssword";
-        public static string strProvider = "server=" + host + ";Database=" + database + ";User ID=" + userDB + ";Password=" + password;
+        private string connectionString;
+
+        //public static string strProvider = "server=" + host +";user id=" + userID+ ";database=" + database ;
+
+        public connection()
+        {
+            this.connectionString = String.Format(
+                "server={0};port={1};user id={2}; password={3}; database={4}", 
+                host,
+                port,
+                userID,
+                password,
+                database);
+
+            
+            this.Open();
+        }
+
         public bool Open()
         {
             try
             {
-                strProvider = "server=" + host + ";Database=" + database + ";User ID=" + userDB + ";Password=" + password;
-                conn = new MySqlConnection(strProvider);
+                //strProvider = "host=" + host + ";database=" + database + ";userID=" + userID + ";password" + password;
+                conn = new MySqlConnection(this.connectionString);
                 conn.Open();
                 return true;
             }

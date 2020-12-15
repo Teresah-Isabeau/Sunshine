@@ -25,21 +25,37 @@ namespace Sunshine
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            accountEmail = tbEmail.Text;
-            accountPassword = tbPassword.Text;
-            User newAccount = new User(accountEmail, accountPassword);
-            
-            if (newAccount.PasswordCheck(tbConfirm.Text))
-            {
-                this.Hide();
-                AccountInfo form4 = new AccountInfo();
-                form4.Show();
+            // MySqlConnection conn = new MySqlConnection("server=192.168.172.20;user id=TestUser;database=Sunshine;");
+            connection conn = new connection();
+            MySqlCommand cmd = null;
+            string cmdString = "";
+           // conn.Open();
 
-            }
-            else
-            {
-                MessageBox.Show("Passwords aren't the same, please try again.");
-            }
+            cmdString = "insert into Login values(" + tbEmail.Text + ",'" + tbPassword.Text + ")";
+
+            conn.ExecuteDataSet(cmdString);
+            //cmd = new MySqlCommand(cmdString, conn);
+            //cmd.ExecuteNonQuery();
+
+            //.Close();
+
+            MessageBox.Show("Data Stored Successfully");
+
+            /* accountEmail = tbEmail.Text;
+             accountPassword = tbPassword.Text;
+             User newAccount = new User(accountEmail, accountPassword);
+
+             if (newAccount.PasswordCheck(tbConfirm.Text))
+             {
+                 this.Hide();
+                 AccountInfo form4 = new AccountInfo();
+                 form4.Show();
+
+             }
+             else
+             {
+                 MessageBox.Show("Passwords aren't the same, please try again.");
+             }*/
         }
     }
 }
