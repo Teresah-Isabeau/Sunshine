@@ -14,11 +14,10 @@ namespace Sunshine
     public partial class Login : Form
     {
         connection con = new connection();
-        string id, username, password, firstname, lastname, address;
+        string eMail, password;
 
         public Login()
-        {
-            
+        { 
             InitializeComponent();
         }
 
@@ -30,21 +29,20 @@ namespace Sunshine
                 {
 
                     con.Open();
-                    string query = "select id,username,password,firstname,lastname,address from user WHERE username ='" + tbEmail.Text + "' AND password ='" + tbPassword.Text + "'";
+                    string query = "select eMail, password from user WHERE eMail ='" + tbEmail.Text + "' AND password ='" + tbPassword.Text + "'";
                     MySqlDataReader row;
                     row = con.ExecuteReader(query);
                     if (row.HasRows)
                     {
                         while (row.Read())
                         {
-                            id = row["id"].ToString();
-                            username = row["username"].ToString();
+                            eMail = row["eMail"].ToString();
                             password = row["password"].ToString();
-                            firstname = row["firstname"].ToString();
-                            lastname = row["lastname"].ToString();
-                            address = row["address"].ToString();
                         }
-                        MessageBox.Show("Data found your name is " + firstname + " " + lastname + " " + " and your address at " + address);
+                        MessageBox.Show("Login correct");
+                        this.Hide();
+                        Home form5 = new Home();
+                        form5.Show();
                     }
                     else
                     {

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Sunshine
 {
-    class Database
+    /*class Database
     {
-        public static void Main()
+        public static void Test()
         {
             string connStr = "server=192.168.172.20;user id=TestUser;database=Sunshine";
             MySqlConnection conn = new MySqlConnection(connStr);
@@ -30,18 +30,17 @@ namespace Sunshine
             conn.Close();
             Console.WriteLine("Done.");
         }
-    }
-
+    }*/
 
     class connection
     {
 
         MySql.Data.MySqlClient.MySqlConnection conn;
         string myConnectionString;
-        static string host = "localhost";
-        static string database = "test";
-        static string userDB = "ecco";
-        static string password = "password";
+        static string host = "192.186.172.20";
+        static string database = "Sunshine";
+        static string userDB = "TestUser";
+        static string password = "P@ssword";
         public static string strProvider = "server=" + host + ";Database=" + database + ";User ID=" + userDB + ";Password=" + password;
         public bool Open()
         {
