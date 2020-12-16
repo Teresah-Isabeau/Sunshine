@@ -29,7 +29,7 @@ namespace Sunshine
             MySqlCommand cmd = null;
             string cmdString = "";
 
-            cmdString = "insert into Login('" + tbEmail.Text + "','" + tbPassword.Text + "') values (@eMail, @password)";
+            cmdString = "insert into Login(eMail, password) values ('" + tbEmail.Text + "','" + tbPassword.Text + "')";
 
             conn.ExecuteDataSet(cmdString);
 

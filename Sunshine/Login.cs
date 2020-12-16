@@ -27,9 +27,8 @@ namespace Sunshine
             {
                 if (tbEmail.Text != "" && tbPassword.Text != "")
                 {
-
-                    con.Open();
-                    string query = "select eMail, password from user WHERE eMail ='" + tbEmail.Text + "' AND password ='" + tbPassword.Text + "'";
+                    //con.Open();
+                    string query = "select eMail, password from Login WHERE eMail ='" + tbEmail.Text + "' AND password ='" + tbPassword.Text + "'";
                     MySqlDataReader row;
                     row = con.ExecuteReader(query);
                     if (row.HasRows)
