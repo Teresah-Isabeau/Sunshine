@@ -36,15 +36,12 @@ namespace Sunshine
     {
 
         MySql.Data.MySqlClient.MySqlConnection conn;
-        string myConnectionString;
         static string host = "192.168.172.20";
         static string port = "3306";
         static string database = "Sunshine";
         static string userID = "TestUser";
         static string password = "P@ssword";
         private string connectionString;
-
-        //public static string strProvider = "server=" + host +";user id=" + userID+ ";database=" + database ;
 
         public connection()
         {

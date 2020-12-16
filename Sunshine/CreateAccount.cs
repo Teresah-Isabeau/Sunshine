@@ -24,20 +24,14 @@ namespace Sunshine
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
-        {
-            // MySqlConnection conn = new MySqlConnection("server=192.168.172.20;user id=TestUser;database=Sunshine;");
+        {          
             connection conn = new connection();
             MySqlCommand cmd = null;
             string cmdString = "";
-           // conn.Open();
 
-            cmdString = "insert into Login values(" + tbEmail.Text + ",'" + tbPassword.Text + ")";
+            cmdString = "insert into Login('" + tbEmail.Text + "','" + tbPassword.Text + "') values (@eMail, @password)";
 
             conn.ExecuteDataSet(cmdString);
-            //cmd = new MySqlCommand(cmdString, conn);
-            //cmd.ExecuteNonQuery();
-
-            //.Close();
 
             MessageBox.Show("Data Stored Successfully");
 
