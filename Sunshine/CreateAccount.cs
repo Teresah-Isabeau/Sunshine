@@ -12,23 +12,27 @@ namespace Sunshine
 {
     public partial class CreateAccount : Form
     {
-        //public static to be able to access it when to use login
-        //checks what user filled in at create account equals login
-        public static string accountEmail;
-        public static string accountPassword;
+        private string accountEmail;
+        private string accountPassword;
+
+        private static User newUser;
+        public static User NewUser
+        {
+            get { return newUser; }
+            set { newUser = value; }
+        }
 
         public CreateAccount()
         {
             InitializeComponent();
         }
-
         private void btnRegister_Click(object sender, EventArgs e)
         {
             accountEmail = tbEmail.Text;
             accountPassword = tbPassword.Text;
-            User newAccount = new User(accountEmail, accountPassword);
-            
-            if (newAccount.PasswordCheck(tbConfirm.Text))
+            NewUser = new User(accountEmail, accountPassword);
+
+            if (NewUser.PasswordCheck(tbConfirm.Text))
             {
                 this.Hide();
                 AccountInfo form4 = new AccountInfo();

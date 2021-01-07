@@ -15,7 +15,18 @@ namespace Sunshine
         private decimal age;
         private string skinType;
         private string loginEmail;
+        public string LoginEmail
+        {
+            get { return loginEmail; }
+            set { loginEmail = value; }
+        }
         private string loginPassword;
+        public string LoginPassword
+        {
+            get { return loginPassword; }
+            set { loginPassword = value; }
+        }
+
         private string country;
         private string date;
         private string factor;
@@ -31,7 +42,6 @@ namespace Sunshine
             this.loginPassword = password;
         }
 
-        //overloading, depending on what needs to be given to the class
         public User(string name, decimal age, string country, string skinType)
         {
             this.name = name;
@@ -44,7 +54,6 @@ namespace Sunshine
         {
 
         }
-
 
         /// <summary>
         /// method that checks if the login is equal to the password and email of the account
@@ -66,13 +75,6 @@ namespace Sunshine
             }
             return loginCheck;
         }
-
-        /*
-        public string FormulaCountdown()
-        {
-
-        }
-        */
 
         /// <summary>
         /// method to check if the given password is the same as the confirm password
@@ -119,7 +121,7 @@ namespace Sunshine
         public void CountdownSunscreen()
         {
             var hours = 2; //countdown time
-            var start = DateTime.Now; // Use UtcNow instead of Now
+            var start = DateTime.Now; 
             endTime = start.AddHours(hours); //endTime is a member, not a local variable
         }
 

@@ -14,16 +14,13 @@ namespace Sunshine
     {
         public Login()
         {
-            
+
             InitializeComponent();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-
-            User userLogin = new User();
-            
-            if (userLogin.LoginCheck(tbEmail.Text, tbPassword.Text, CreateAccount.accountEmail, CreateAccount.accountPassword))
+            if (CreateAccount.NewUser.LoginCheck(tbEmail.Text, tbPassword.Text, CreateAccount.NewUser.LoginEmail, CreateAccount.NewUser.LoginPassword))
             {
                 this.Hide();
                 Home form5 = new Home();
@@ -33,9 +30,7 @@ namespace Sunshine
             {
                 MessageBox.Show("Wrong email or password. Please try again");
             }
-
         }
-
         private void btnNewAccount_Click(object sender, EventArgs e)
         {
             this.Hide();
