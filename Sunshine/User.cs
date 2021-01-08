@@ -8,12 +8,15 @@ using System.Windows.Forms;
 
 namespace Sunshine
 {
+    //ToDo: edit the variables,
+    //make property for rewards
 
     public class User
     {
         private string name;
         private decimal age;
         private string skinType;
+
         private string loginEmail;
         public string LoginEmail
         {
@@ -53,6 +56,13 @@ namespace Sunshine
         public User()
         {
 
+        }
+        public void UserInformation(string Name, decimal Age, string Country, string SkinType)
+        {
+            name = Name;
+            age = Age;
+            country = Country;
+            skinType = SkinType;
         }
 
         /// <summary>

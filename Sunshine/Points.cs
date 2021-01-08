@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace RewardSystem
 {
+    //ToDo: make the classes work with the application,
+    //make class Level
+
     /// <summary>
     /// method getPoints gives the user points
     /// levelUp will level the user with 1 level whe the levelpoints are reached

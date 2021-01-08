@@ -11,6 +11,10 @@ using System.Globalization;
 
 namespace Sunshine
 {
+    //ToDo: when user edits information, show the information already given in the boxes,
+    //make a check to see if the variables are null,
+    //if yes show blank,
+    //if no show the information
     public partial class AccountInfo : Form
     {
         public static decimal age;
@@ -38,8 +42,7 @@ namespace Sunshine
         {
             age = nudAge.Value;
 
-            User userInfo = new User(tbName.Text, age, cbCountry.Text, cbSkin.Text);
-
+            CreateAccount.NewUser.UserInformation(tbName.Text, age, cbCountry.Text, cbSkin.Text);
             if (string.IsNullOrWhiteSpace(tbName.Text) || string.IsNullOrWhiteSpace(cbCountry.Text) || nudAge == null || string.IsNullOrWhiteSpace(cbSkin.Text)) {
                 MessageBox.Show("Please fill in every field");
             }
