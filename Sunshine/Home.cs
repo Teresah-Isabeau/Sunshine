@@ -12,7 +12,6 @@ namespace Sunshine
 {
     public partial class Home : Form
     {
-        User newData = new User();
         DateTime endTime;
         private bool reapplied = false;
         private int totalUserPoints;
@@ -30,14 +29,14 @@ namespace Sunshine
         /// <param name="e"></param>
         private void Home_Load(object sender, EventArgs e)
         {
-            lbDate.Text = "Date: " + newData.getDate();
+            lbDate.Text = "Date: " + CreateAccount.NewUser.getDate();
 
 
             timer1.Enabled = true;
             timer1.Interval = 1000;
 
 
-            lbSunscreen.Text = "Sunscreen Factor: " + newData.FactorAdvice();
+            lbSunscreen.Text = "Sunscreen Factor: " + CreateAccount.NewUser.FactorAdvice();
 
             EnableTimer();
         }
@@ -65,7 +64,13 @@ namespace Sunshine
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            DateTime timeNow = DateTime.Now;
             lbTime.Text = DateTime.Now.ToLongTimeString();
+            if (timeNow.Hour >= 12 && timeNow.Hour <= 15)
+            {
+                lblOutOfSun.Enabled = true;
+                lblOutOfSun.Text = "It's the best if you stay out of the sun between 12 and 15";
+            }
         }
 
         private void sunscreenTimer_Tick(object sender, EventArgs e)
@@ -79,14 +84,14 @@ namespace Sunshine
                 DialogResult msg = MessageBox.Show("Reapply Sunscreen!");
                 if (msg == DialogResult.OK)
                 {
-                    totalUserPoints = newData.TotalPoints(reapplied);
+                    totalUserPoints = CreateAccount.NewUser.TotalPoints(reapplied);
                     EnableTimer();
 
                 }
             }
             else
             {
-                string formatted = remainingTime.ToString(@"dd\.hh\:mm\:ss");
+                string formatted = "Time until reapply: " + remainingTime.ToString(@"dd\.hh\:mm\:ss");
                 lbIndication.Text = formatted;
             }
         }

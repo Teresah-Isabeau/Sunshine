@@ -17,7 +17,10 @@ namespace Sunshine
     //if no show the information
     public partial class AccountInfo : Form
     {
-        public static decimal age;
+        private decimal age;
+        private string name;
+        private string country;
+        private string skintype;
 
         public AccountInfo()
         {
@@ -41,8 +44,11 @@ namespace Sunshine
         private void btnConfirm_Click(object sender, EventArgs e)
         {
             age = nudAge.Value;
+            name = tbName.Text;
+            country = cbCountry.Text;
+            skintype = cbSkin.Text;
 
-            CreateAccount.NewUser.UserInformation(tbName.Text, age, cbCountry.Text, cbSkin.Text);
+            CreateAccount.NewUser.UserInformation(name, age, country, skintype);
             if (string.IsNullOrWhiteSpace(tbName.Text) || string.IsNullOrWhiteSpace(cbCountry.Text) || nudAge == null || string.IsNullOrWhiteSpace(cbSkin.Text)) {
                 MessageBox.Show("Please fill in every field");
             }

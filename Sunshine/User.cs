@@ -15,6 +15,8 @@ namespace Sunshine
     {
         private string name;
         private decimal age;
+
+
         private string skinType;
 
         private string loginEmail;
@@ -43,14 +45,6 @@ namespace Sunshine
         {
             this.loginEmail = email;
             this.loginPassword = password;
-        }
-
-        public User(string name, decimal age, string country, string skinType)
-        {
-            this.name = name;
-            this.age = age;
-            this.skinType = skinType;
-            this.country = country;
         }
 
         public User()
@@ -118,13 +112,38 @@ namespace Sunshine
         /// </summary>
         public string FactorAdvice()
         {
-            if (AccountInfo.age > 18)
+            if (age < 16)
             {
-                factor = "30 or 20";
+                factor = "Children neet to use at least sunscreen factor 30 or 50.";
             }
-            else if (AccountInfo.age < 18)
+            else if (age > 18)
             {
-                factor = "50 or 30";
+                switch (int.Parse(skinType))
+                {
+                
+                    case 1:
+                        factor = "Your skin is very sensitive to the sun.\nUse at least sunscreen factor 30 or higher.";
+                        break;
+                    case 2:
+                        factor = "Your skin is very sensitive to the sun.\nUse at least sunscreen factor 30 or higher.";
+                        break;
+                    case 3:
+                        factor = "Your skin sometimes burns and you sometimes get a tan.\nUse sunscreen factor 15 or higher";
+                        break;
+                    case 4:
+                        factor = "You tan easily and don't burn often. But you are still at risk.\nUse sunscreen factor 15 or higher.";
+                        break;
+                    case 5:
+                        factor = "You tan very easily and don't burn often, but you are still at risk.\nUse sunscreen factor 15 or higher.";
+                        break;
+                    case 6:
+                        factor = "Even if you don't burn,\npeople with dark skin are still at risk of getting skin cancer.\nUse sunscreen factor 15 or higher";
+                        break;
+                    default:
+                        factor = "";
+                        break;
+                }
+
             }
             return factor;
         }
