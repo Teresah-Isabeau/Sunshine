@@ -37,9 +37,14 @@ namespace Sunshine
         private string factor;
         private DateTime endTime;
 
-        private int levelPoints;
         private int totalPoints;
         private int level;
+
+        public RewardSystem.Points userPoints { get; private set; }
+   
+
+        public List<List<string>> userRewards { get; private set; }
+
 
         public User(string email, string password)
         {
@@ -154,28 +159,23 @@ namespace Sunshine
             endTime = start.AddHours(hours); //endTime is a member, not a local variable
         }
 
-        public int TotalPoints(bool reapplied)
+        public int GetUserPoints(bool reapplied) 
         {
             if (reapplied)
             {
-                totalPoints += 5;
+                totalPoints = userPoints.GetPoints();
             }
 
             return totalPoints;
         }
-        public int LevelUp()
+        public int GetLevel()
         {
-            if (levelPoints == 50)
-            {
-                level += 1;
-                levelPoints = 0;
-            }
-            else
-            {
-                levelPoints += 5;
-            }
+            level = userPoints.GetPoints();
             return level;
-
+        }
+        public int ShowPoints()
+        {
+            return totalPoints;
         }
     }
 }

@@ -44,5 +44,10 @@ namespace Sunshine
                 MessageBox.Show("Passwords aren't the same, please try again.");
             }
         }
+
+        private void CreateAccount_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

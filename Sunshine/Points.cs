@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace RewardSystem
 {
-    //ToDo: make the classes work with the application,
-    //make class Level
+    //ToDo: bind the point given to the notification
 
     /// <summary>
     /// method getPoints gives the user points
@@ -37,7 +36,6 @@ namespace RewardSystem
         public int GetPoints()
         {
             totalPoints += 5;
-            Console.WriteLine("Total points: " + totalPoints);
             return totalPoints;
         }
         public int LevelUp()
@@ -56,7 +54,6 @@ namespace RewardSystem
                 levelPoints += 5;
                 leveledUp = false;
             }
-            Console.WriteLine("Level: " + level);
             return level;
         }
 
@@ -95,6 +92,8 @@ namespace RewardSystem
         public Random coupon { get; private set; }
         public int saveCoupon { get; private set; }
 
+        
+
         public Coupon()
         {
             randomPointAmount = new Random();
@@ -113,7 +112,7 @@ namespace RewardSystem
             return (T)itemArray.GetValue(randomEnumItem.Next(itemArray.Length));
         }
 
-        public void AddReward()
+        public List<List<string>> AddReward()
         {
             var value = RandomEnumValue<Item>();
             int addPoints, addCoupon;
@@ -124,9 +123,9 @@ namespace RewardSystem
             {
                 rewardList.Add(new List<string> { rewardCount.ToString(), addPoints.ToString(), value.ToString(),
                     addCoupon.ToString() });
-
                 rewardCount++;
             }
+            return rewardList;
         }
         public void ShowRewards()
         {
@@ -136,7 +135,6 @@ namespace RewardSystem
                 Console.WriteLine(sublist[0] + " " + sublist[1] + " " + sublist[2] + " " + sublist[3] + "%");
             }
         }
-
         public void ChooseReward()
         {
             if (rewardList.Count == 0)

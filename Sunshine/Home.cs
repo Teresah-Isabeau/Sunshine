@@ -66,7 +66,7 @@ namespace Sunshine
         {
             DateTime timeNow = DateTime.Now;
             lbTime.Text = DateTime.Now.ToLongTimeString();
-            if (timeNow.Hour >= 12 && timeNow.Hour <= 15)
+            if (timeNow.Hour >= 12 && timeNow.Hour < 15)
             {
                 lblOutOfSun.Enabled = true;
                 lblOutOfSun.Text = "It's the best if you stay out of the sun between 12 and 15";
@@ -84,7 +84,7 @@ namespace Sunshine
                 DialogResult msg = MessageBox.Show("Reapply Sunscreen!");
                 if (msg == DialogResult.OK)
                 {
-                    totalUserPoints = CreateAccount.NewUser.TotalPoints(reapplied);
+                    Login.UserLevel.TotalPoints();
                     EnableTimer();
 
                 }
@@ -97,7 +97,7 @@ namespace Sunshine
         }
         private void EnableTimer()
         {
-            var minutes = 1; //countdown time
+            var minutes = 0.5; //countdown time
             var start = DateTime.Now; // Use UtcNow instead of Now
             endTime = start.AddMinutes(minutes); //endTime is a member, not a local variable
             sunscreenTimer.Enabled = true;

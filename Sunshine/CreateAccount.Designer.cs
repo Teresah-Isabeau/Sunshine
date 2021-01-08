@@ -71,7 +71,7 @@
             // tbEmail
             // 
             this.tbEmail.Location = new System.Drawing.Point(329, 83);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(2);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(76, 20);
             this.tbEmail.TabIndex = 3;
@@ -79,7 +79,7 @@
             // tbPassword
             // 
             this.tbPassword.Location = new System.Drawing.Point(329, 120);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(76, 20);
             this.tbPassword.TabIndex = 4;
@@ -87,7 +87,7 @@
             // tbConfirm
             // 
             this.tbConfirm.Location = new System.Drawing.Point(329, 156);
-            this.tbConfirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.tbConfirm.Name = "tbConfirm";
             this.tbConfirm.Size = new System.Drawing.Size(76, 20);
             this.tbConfirm.TabIndex = 5;
@@ -95,7 +95,7 @@
             // btnRegister
             // 
             this.btnRegister.Location = new System.Drawing.Point(232, 248);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(61, 37);
             this.btnRegister.TabIndex = 6;
@@ -126,9 +126,10 @@
             this.Controls.Add(this.lbConfirm);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbEmail);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CreateAccount";
             this.Text = "CreateAccount";
+            this.Load += new System.EventHandler(this.CreateAccount_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

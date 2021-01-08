@@ -40,49 +40,55 @@
             // lbLogin
             // 
             this.lbLogin.AutoSize = true;
-            this.lbLogin.Location = new System.Drawing.Point(342, 52);
+            this.lbLogin.Location = new System.Drawing.Point(256, 42);
+            this.lbLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbLogin.Name = "lbLogin";
-            this.lbLogin.Size = new System.Drawing.Size(43, 17);
+            this.lbLogin.Size = new System.Drawing.Size(33, 13);
             this.lbLogin.TabIndex = 0;
             this.lbLogin.Text = "Login";
             // 
             // lbEmail
             // 
             this.lbEmail.AutoSize = true;
-            this.lbEmail.Location = new System.Drawing.Point(147, 114);
+            this.lbEmail.Location = new System.Drawing.Point(110, 93);
+            this.lbEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(47, 17);
+            this.lbEmail.Size = new System.Drawing.Size(35, 13);
             this.lbEmail.TabIndex = 1;
             this.lbEmail.Text = "E-mail";
             // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.Location = new System.Drawing.Point(150, 160);
+            this.lbPassword.Location = new System.Drawing.Point(112, 130);
+            this.lbPassword.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(69, 17);
+            this.lbPassword.Size = new System.Drawing.Size(53, 13);
             this.lbPassword.TabIndex = 2;
             this.lbPassword.Text = "Password";
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(287, 109);
+            this.tbEmail.Location = new System.Drawing.Point(215, 89);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(169, 22);
+            this.tbEmail.Size = new System.Drawing.Size(128, 20);
             this.tbEmail.TabIndex = 3;
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(287, 155);
+            this.tbPassword.Location = new System.Drawing.Point(215, 126);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(169, 22);
+            this.tbPassword.Size = new System.Drawing.Size(128, 20);
             this.tbPassword.TabIndex = 4;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(326, 262);
+            this.btnLogin.Location = new System.Drawing.Point(244, 213);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(100, 42);
+            this.btnLogin.Size = new System.Drawing.Size(75, 34);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -90,9 +96,10 @@
             // 
             // btnNewAccount
             // 
-            this.btnNewAccount.Location = new System.Drawing.Point(326, 310);
+            this.btnNewAccount.Location = new System.Drawing.Point(244, 252);
+            this.btnNewAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNewAccount.Name = "btnNewAccount";
-            this.btnNewAccount.Size = new System.Drawing.Size(100, 41);
+            this.btnNewAccount.Size = new System.Drawing.Size(75, 33);
             this.btnNewAccount.TabIndex = 6;
             this.btnNewAccount.Text = "New Account";
             this.btnNewAccount.UseVisualStyleBackColor = true;
@@ -100,9 +107,9 @@
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.btnNewAccount);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.tbPassword);
@@ -110,8 +117,10 @@
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.lbLogin);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -30,5 +30,10 @@ namespace Sunshine
         {
 
         }
+
+        private void Reward_Load(object sender, EventArgs e)
+        {
+            lbPoints.Text = Login.UserLevel.totalPoints.ToString();
+        }
     }
 }
