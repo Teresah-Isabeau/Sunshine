@@ -35,6 +35,7 @@
             this.btnGet = new System.Windows.Forms.Button();
             this.btnDonate = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.listRewards = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // lbRewards
@@ -80,7 +81,7 @@
             // btnGet
             // 
             this.btnGet.Location = new System.Drawing.Point(212, 145);
-            this.btnGet.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGet.Margin = new System.Windows.Forms.Padding(2);
             this.btnGet.Name = "btnGet";
             this.btnGet.Size = new System.Drawing.Size(56, 19);
             this.btnGet.TabIndex = 4;
@@ -91,7 +92,7 @@
             // btnDonate
             // 
             this.btnDonate.Location = new System.Drawing.Point(214, 179);
-            this.btnDonate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDonate.Margin = new System.Windows.Forms.Padding(2);
             this.btnDonate.Name = "btnDonate";
             this.btnDonate.Size = new System.Drawing.Size(56, 19);
             this.btnDonate.TabIndex = 5;
@@ -101,7 +102,7 @@
             // btnBack
             // 
             this.btnBack.Location = new System.Drawing.Point(17, 19);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(56, 33);
             this.btnBack.TabIndex = 6;
@@ -109,11 +110,20 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // listRewards
+            // 
+            this.listRewards.FormattingEnabled = true;
+            this.listRewards.Location = new System.Drawing.Point(415, 72);
+            this.listRewards.Name = "listRewards";
+            this.listRewards.Size = new System.Drawing.Size(158, 173);
+            this.listRewards.TabIndex = 7;
+            // 
             // Reward
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.listRewards);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDonate);
             this.Controls.Add(this.btnGet);
@@ -121,9 +131,10 @@
             this.Controls.Add(this.lbCoupon);
             this.Controls.Add(this.lbPoints);
             this.Controls.Add(this.lbRewards);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Reward";
             this.Text = "Reward";
+            this.Load += new System.EventHandler(this.Reward_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +149,6 @@
         private System.Windows.Forms.Button btnGet;
         private System.Windows.Forms.Button btnDonate;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.ListBox listRewards;
     }
 }
