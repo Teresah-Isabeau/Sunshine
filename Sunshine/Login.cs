@@ -27,25 +27,27 @@ namespace Sunshine
             {
                 if (tbEmail.Text != "" && tbPassword.Text != "")
                 {
-                    //con.Open();
-                    string query = "select eMail, password from Login WHERE eMail ='" + tbEmail.Text + "' AND password ='" + tbPassword.Text + "'";
-                    MySqlDataReader row;
-                    row = con.ExecuteReader(query);
-                    if (row.HasRows)
+                    string query = "SELECT eMail, password FROM Login WHERE eMail=@email AND password=@password";
+                    List<MySqlParameter> sqlParameters = new List<MySqlParameter>();
+                    MySqlParameter paramEmail = new MySqlParameter("@email", tbEmail.Text);
+                    MySqlParameter paramPassword = new MySqlParameter("@password", tbPassword.Text);
+                    sqlParameters.Add(paramEmail);
+                    sqlParameters.Add(paramPassword);
+
+                    bool userExists = con.Exists(query, sqlParameters);
+                    
+                    if (userExists)
                     {
-                        while (row.Read())
-                        {
-                            eMail = row["eMail"].ToString();
-                            password = row["password"].ToString();
-                        }
-                        MessageBox.Show("Login correct");
+                        eMail = tbEmail.Text;
+                        password = tbPassword.Text;
+                        
                         this.Hide();
                         Home form5 = new Home();
                         form5.Show();
                     }
                     else
                     {
-                        MessageBox.Show("Data not found", "Information");
+                        MessageBox.Show("User not found", "Information");
                     }
                 }
                 else
@@ -57,22 +59,7 @@ namespace Sunshine
             {
                 MessageBox.Show("Connection Error", "Information");
             }
-        
-    
-            /* User userLogin = new User();
-
-             if (userLogin.LoginCheck(tbEmail.Text, tbPassword.Text, CreateAccount.accountEmail, CreateAccount.accountPassword))
-             {
-                 this.Hide();
-                 Home form5 = new Home();
-                 form5.Show();
-             }
-             else
-             {
-                 MessageBox.Show("Wrong email or password. Please try again");
-             }*/
-
-}
+        }
 
         private void btnNewAccount_Click(object sender, EventArgs e)
         {

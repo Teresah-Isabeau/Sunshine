@@ -46,84 +46,119 @@ namespace Sunshine
         public connection()
         {
             this.connectionString = String.Format(
-                "server={0};port={1};user id={2}; password={3}; database={4}", 
+                "server={0};port={1};user id={2}; password={3}; database={4}",
                 host,
                 port,
                 userID,
                 password,
                 database);
-
-            
-            this.Open();
+            this.conn = new MySqlConnection(this.connectionString);
         }
 
-        public bool Open()
+        private bool Open()
         {
             try
             {
-                //strProvider = "host=" + host + ";database=" + database + ";userID=" + userID + ";password" + password;
-                conn = new MySqlConnection(this.connectionString);
                 conn.Open();
                 return true;
             }
             catch (Exception er)
             {
+                //return false;
                 MessageBox.Show("Connection Error ! " + er.Message, "Information");
             }
             return false;
         }
-        public void Close()
+
+        private void Close()
         {
             conn.Close();
             conn.Dispose();
         }
-        public DataSet ExecuteDataSet(string sql)
+
+        public DataTable Select(string sql)
+        {
+            List<MySqlParameter> emptyCollection = new List<MySqlParameter>();
+            return this.Select(sql, emptyCollection);
+        }
+
+        //select
+        public DataTable Select(string sql, List<MySqlParameter> sqlParameters)
         {
             try
             {
-                DataSet ds = new DataSet();
-                MySqlDataAdapter da = new MySqlDataAdapter(sql, conn);
-                da.Fill(ds, "result");
-                return ds;
+                this.Open();
+                MySqlDataAdapter adapter = new MySqlDataAdapter(sql, conn);
+                adapter.SelectCommand.CommandType = CommandType.Text;
+
+                foreach (MySqlParameter param in sqlParameters)
+                    adapter.SelectCommand.Parameters.Add(param);
+
+                DataTable dt = new DataTable();
+
+                adapter.Fill(dt);
+
+                return dt;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                return null;
             }
-            return null;
+            finally
+            {
+                this.Close();
+            }
         }
-        public MySqlDataReader ExecuteReader(string sql)
+
+        //insert
+        public int Insert(string sql, List<MySqlParameter> sqlParameters)
         {
+            int affected;
+            this.Open();
             try
             {
-                MySqlDataReader reader;
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                reader = cmd.ExecuteReader();
-                return reader;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return null;
-        }
-        public int ExecuteNonQuery(string sql)
-        {
-            try
-            {
-                int affected;
-                MySqlTransaction mytransaction = conn.BeginTransaction();
+                MySqlTransaction transaction = conn.BeginTransaction();
                 MySqlCommand cmd = conn.CreateCommand();
                 cmd.CommandText = sql;
+                foreach (MySqlParameter param in sqlParameters)
+                    cmd.Parameters.Add(param);
                 affected = cmd.ExecuteNonQuery();
-                mytransaction.Commit();
+                transaction.Commit();
                 return affected;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                return 0;
             }
-            return -1;
+            finally
+            {
+                this.Close();
+            }
         }
+
+        //exists
+        public bool Exists(string sql, List<MySqlParameter> sqlParameters)
+        {
+            try
+            {
+                this.Open();
+                MySqlDataReader reader;
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                foreach (MySqlParameter param in sqlParameters)
+                    cmd.Parameters.Add(param);
+
+                reader = cmd.ExecuteReader();
+                return reader.HasRows;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            finally
+            {
+                this.Close();
+            }
+        }
+
     }
 }

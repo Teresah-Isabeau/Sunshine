@@ -26,30 +26,24 @@ namespace Sunshine
         private void btnRegister_Click(object sender, EventArgs e)
         {          
             connection conn = new connection();
-            MySqlCommand cmd = null;
             string cmdString = "";
 
-            cmdString = "insert into Login(eMail, password) values ('" + tbEmail.Text + "','" + tbPassword.Text + "')";
+            cmdString = "insert into Login(eMail, password) values (@email, @password)";
+            List<MySqlParameter> sqlParameters = new List<MySqlParameter>();
+            MySqlParameter paramEmail = new MySqlParameter("@email", tbEmail.Text);
+            MySqlParameter paramPassword = new MySqlParameter("@password", tbPassword.Text);
+            sqlParameters.Add(paramEmail);
+            sqlParameters.Add(paramPassword);
 
-            conn.ExecuteDataSet(cmdString);
+            int affectedRows = conn.Insert(cmdString, sqlParameters);
 
-            MessageBox.Show("Data Stored Successfully");
-
-            /* accountEmail = tbEmail.Text;
-             accountPassword = tbPassword.Text;
-             User newAccount = new User(accountEmail, accountPassword);
-
-             if (newAccount.PasswordCheck(tbConfirm.Text))
-             {
-                 this.Hide();
-                 AccountInfo form4 = new AccountInfo();
-                 form4.Show();
-
-             }
-             else
-             {
-                 MessageBox.Show("Passwords aren't the same, please try again.");
-             }*/
+            if (affectedRows == 1)
+            {
+                MessageBox.Show("Created account successfully");
+            } else
+            {
+                MessageBox.Show("Failed to create account");
+            }
         }
     }
 }
