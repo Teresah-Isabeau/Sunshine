@@ -29,8 +29,8 @@ namespace Sunshine
             {
                 MessageBox.Show("Created account succesfully!", "Information");
                 this.Hide();
-                Login form5 = new Login();
-                form5.Show();
+                AccountInfo form4 = new AccountInfo();
+                form4.Show();
             }
             else
             {
