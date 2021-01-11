@@ -45,7 +45,7 @@ namespace Sunshine
         /// <returns>returns een bool om aan te geven of dit gelukt is of niet</returns>
         private bool RegisterToDatabase()
         {
-            connection conn = new connection();
+            database conn = new database();
             string cmdString = "";
 
             cmdString = "insert into Login(eMail, password) values (@email, @password)";
