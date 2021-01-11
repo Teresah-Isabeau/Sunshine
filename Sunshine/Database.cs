@@ -11,27 +11,6 @@ using System.Windows.Forms;
 
 namespace Sunshine
 {
-    /*class Database
-    {
-        public static void Test()
-        {
-            string connStr = "server=192.168.172.20;user id=TestUser;database=Sunshine";
-            MySqlConnection conn = new MySqlConnection(connStr);
-            try
-            {
-                Console.WriteLine("Connecting to MySQL...");
-                conn.Open();
-                // Perform database operations
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-            conn.Close();
-            Console.WriteLine("Done.");
-        }
-    }*/
-
     class connection
     {
 
@@ -54,7 +33,7 @@ namespace Sunshine
                 database);
             this.conn = new MySqlConnection(this.connectionString);
         }
-
+        //Opent de database connectie
         private bool Open()
         {
             try
@@ -63,13 +42,12 @@ namespace Sunshine
                 return true;
             }
             catch (Exception er)
-            {
-                //return false;
+            {            
                 MessageBox.Show("Connection Error ! " + er.Message, "Information");
             }
             return false;
         }
-
+        //Sluit de database connectie
         private void Close()
         {
             conn.Close();
@@ -82,6 +60,13 @@ namespace Sunshine
             return this.Select(sql, emptyCollection);
         }
 
+        /// <summary>
+        /// Haalt data op uit de database.
+        /// Voert de select query uit en zet de data in een datatable object.
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="sqlParameters"></param>
+        /// <returns></returns>
         //select
         public DataTable Select(string sql, List<MySqlParameter> sqlParameters)
         {
@@ -100,7 +85,7 @@ namespace Sunshine
 
                 return dt;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -110,6 +95,12 @@ namespace Sunshine
             }
         }
 
+        /// <summary>
+        /// Voegt data toe aan een nieuwe regel in de database en commit deze transactie.
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="sqlParameters"></param>
+        /// <returns></returns>
         //insert
         public int Insert(string sql, List<MySqlParameter> sqlParameters)
         {
@@ -126,7 +117,7 @@ namespace Sunshine
                 transaction.Commit();
                 return affected;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return 0;
             }
@@ -136,6 +127,12 @@ namespace Sunshine
             }
         }
 
+        /// <summary>
+        /// Reader checkt of de data bestaat in de database. 
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="sqlParameters"></param>
+        /// <returns></returns>
         //exists
         public bool Exists(string sql, List<MySqlParameter> sqlParameters)
         {
@@ -150,7 +147,7 @@ namespace Sunshine
                 reader = cmd.ExecuteReader();
                 return reader.HasRows;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return false;
             }
@@ -159,6 +156,5 @@ namespace Sunshine
                 this.Close();
             }
         }
-
     }
 }

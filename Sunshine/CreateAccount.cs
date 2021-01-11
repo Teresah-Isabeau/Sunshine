@@ -25,6 +25,26 @@ namespace Sunshine
 
         private void btnRegister_Click(object sender, EventArgs e)
         {          
+            if (RegisterToDatabase() == true)
+            {
+                MessageBox.Show("Created account succesfully!", "Information");
+                this.Hide();
+                Login form5 = new Login();
+                form5.Show();
+            }
+            else
+            {
+                MessageBox.Show("Failed to create account", "Information");
+            }
+        }
+        /// <summary>
+        /// RegisterToDatabase is een method die de gebruiker zijn ingevulde email en password opslaat in de database. 
+        /// if true -> de gebruiker ontvangt een messagebox dat het gelukt is en word weer terug geleid naar het Login Form.
+        /// if false -> de gebruiker ontvangt een messagebox "failed to create account" 
+        /// </summary>
+        /// <returns>returns een bool om aan te geven of dit gelukt is of niet</returns>
+        private bool RegisterToDatabase()
+        {
             connection conn = new connection();
             string cmdString = "";
 
@@ -39,10 +59,11 @@ namespace Sunshine
 
             if (affectedRows == 1)
             {
-                MessageBox.Show("Created account successfully");
-            } else
+                return true;
+            }
+            else
             {
-                MessageBox.Show("Failed to create account");
+                return false;              
             }
         }
     }
