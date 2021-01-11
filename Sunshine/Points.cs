@@ -99,7 +99,8 @@ namespace RewardSystem
             randomPointAmount = new Random();
             randomEnumItem = new Random();
             rewardList = new List<List<string>>();
-            rewardCount = 1;
+            rewardList.Add(new List<string> { "1", "30", "Sunscreen", "6" });
+            rewardCount = 2;
             coupon = new Random();
         }
 
@@ -139,13 +140,11 @@ namespace RewardSystem
         {
             if (rewardList.Count == 0)
             {
-                Console.WriteLine("No rewards");
+                System.Windows.Forms.MessageBox.Show("No rewards");
             }
             else
             {
-                Console.WriteLine("Enter the number of the reward or type 'exit' to go back");
-                Console.WriteLine("Rewards: ");
-                ShowRewards();
+
                 rewardChoice = Console.ReadLine();
                 foreach (List<string> sub in rewardList)
                 {
@@ -211,9 +210,10 @@ namespace RewardSystem
                 return true;
             }
         }
-        public void RedeemPoints(int pointCost)
+        public int RedeemPoints(int pointCost)
         {
             totalPoints -= pointCost;
+            return totalPoints;
         }
     }
 

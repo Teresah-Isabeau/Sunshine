@@ -36,6 +36,9 @@
             this.btnDonate = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.listRewards = new System.Windows.Forms.ListBox();
+            this.lbLevel = new System.Windows.Forms.Label();
+            this.btnClaim = new System.Windows.Forms.Button();
+            this.lbClaimedReward = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbRewards
@@ -51,7 +54,7 @@
             // lbPoints
             // 
             this.lbPoints.AutoSize = true;
-            this.lbPoints.Location = new System.Drawing.Point(235, 72);
+            this.lbPoints.Location = new System.Drawing.Point(233, 58);
             this.lbPoints.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPoints.Name = "lbPoints";
             this.lbPoints.Size = new System.Drawing.Size(36, 13);
@@ -118,11 +121,42 @@
             this.listRewards.Size = new System.Drawing.Size(158, 173);
             this.listRewards.TabIndex = 7;
             // 
+            // lbLevel
+            // 
+            this.lbLevel.AutoSize = true;
+            this.lbLevel.Location = new System.Drawing.Point(233, 87);
+            this.lbLevel.Name = "lbLevel";
+            this.lbLevel.Size = new System.Drawing.Size(33, 13);
+            this.lbLevel.TabIndex = 8;
+            this.lbLevel.Text = "Level";
+            // 
+            // btnClaim
+            // 
+            this.btnClaim.Location = new System.Drawing.Point(415, 251);
+            this.btnClaim.Name = "btnClaim";
+            this.btnClaim.Size = new System.Drawing.Size(99, 26);
+            this.btnClaim.TabIndex = 9;
+            this.btnClaim.Text = "Claim Reward";
+            this.btnClaim.UseVisualStyleBackColor = true;
+            this.btnClaim.Click += new System.EventHandler(this.btnClaim_Click);
+            // 
+            // lbClaimedReward
+            // 
+            this.lbClaimedReward.AutoSize = true;
+            this.lbClaimedReward.Location = new System.Drawing.Point(61, 264);
+            this.lbClaimedReward.Name = "lbClaimedReward";
+            this.lbClaimedReward.Size = new System.Drawing.Size(113, 13);
+            this.lbClaimedReward.TabIndex = 10;
+            this.lbClaimedReward.Text = "Last Claimed Reward: ";
+            // 
             // Reward
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.lbClaimedReward);
+            this.Controls.Add(this.btnClaim);
+            this.Controls.Add(this.lbLevel);
             this.Controls.Add(this.listRewards);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDonate);
@@ -150,5 +184,8 @@
         private System.Windows.Forms.Button btnDonate;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.ListBox listRewards;
+        private System.Windows.Forms.Label lbLevel;
+        private System.Windows.Forms.Button btnClaim;
+        private System.Windows.Forms.Label lbClaimedReward;
     }
 }

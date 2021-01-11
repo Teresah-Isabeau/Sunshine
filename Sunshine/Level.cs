@@ -42,6 +42,16 @@ namespace RewardSystem
         {
             userRewards = newUserPoints.AddReward();
         }
+        
+        public void Redeem(int pointAmount)
+        {
+            if (newUserPoints.EnoughPointsForReward(pointAmount)) 
+            {
+                totalPoints -= newUserPoints.RedeemPoints(pointAmount);
+            }
+
+        }
+        
     }
 
 }

@@ -12,7 +12,6 @@ namespace Sunshine
 {
     public partial class Login : Form
     {
-        //ToDo: make object of class Level (points need to be consistent throughout the application)
         private static RewardSystem.Level userLevel;
         public static RewardSystem.Level UserLevel = new RewardSystem.Level();
   

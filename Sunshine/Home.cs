@@ -15,10 +15,12 @@ namespace Sunshine
         DateTime endTime;
         private bool reapplied = false;
         private int totalUserPoints;
+        public static Timer countdownTimer { get; private set; }
+
         public Home()
         {
             InitializeComponent();
-
+            countdownTimer = sunscreenTimer;
 
         }
 
@@ -79,12 +81,14 @@ namespace Sunshine
             TimeSpan remainingTime = endTime - DateTime.Now;
             if (remainingTime < TimeSpan.Zero)
             {
-                sunscreenTimer.Enabled = false;
+                countdownTimer.Enabled = false;
                 reapplied = true;
                 DialogResult msg = MessageBox.Show("Reapply Sunscreen!");
                 if (msg == DialogResult.OK)
                 {
                     Login.UserLevel.TotalPoints();
+                    Login.UserLevel.UserLevel();
+                    Login.UserLevel.AllRewards();
                     EnableTimer();
 
                 }
@@ -97,10 +101,10 @@ namespace Sunshine
         }
         private void EnableTimer()
         {
-            var minutes = 0.5; //countdown time
+            var minutes = 0.1; //countdown time
             var start = DateTime.Now; // Use UtcNow instead of Now
             endTime = start.AddMinutes(minutes); //endTime is a member, not a local variable
-            sunscreenTimer.Enabled = true;
+            countdownTimer.Enabled = true;
         }
     }
 }
