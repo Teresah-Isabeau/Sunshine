@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Sunshine
 {
-    class database
+    class Database
     {
 
         MySql.Data.MySqlClient.MySqlConnection conn;
@@ -22,7 +22,7 @@ namespace Sunshine
         static string password = "P@ssword";
         private string connectionString;
 
-        public database()
+        public Database()
         {
             this.connectionString = String.Format(
                 "server={0};port={1};user id={2}; password={3}; database={4}",
