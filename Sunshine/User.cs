@@ -8,10 +8,14 @@ using System.Windows.Forms;
 
 namespace Sunshine
 {
-    //ToDo: edit the variables,
-    //make list for rewards, take rewards from class Level
-    //take level and totalpoints from class Level
-
+    /// <summary>
+    /// user saves password, email and information about the user
+    /// method to check if the filled in password is correct
+    /// method to show date
+    /// method for countdown notification timer 
+    /// method for the advice of which sunscreen factor (based on skin type)
+    /// 
+    /// </summary>
     public class User
     {
         private string name;
@@ -52,18 +56,6 @@ namespace Sunshine
             country = Country;
             skinType = SkinType;
         }
-
-        /// <summary>
-        /// method that checks if the login is equal to the password and email of the account
-        /// returns a boolean
-        /// will be able to login if true
-        /// will get a message if false
-        /// </summary>
-        /// <param name="inputEmail"></param>
-        /// <param name="inputPass"></param>
-        /// <param name="accountEmail"></param>
-        /// <param name="accountPassword"></param>
-        /// <returns></returns>
         public bool LoginCheck(string inputEmail, string inputPass, string accountEmail, string accountPassword)
         {
             bool loginCheck = false;
@@ -73,12 +65,6 @@ namespace Sunshine
             }
             return loginCheck;
         }
-
-        /// <summary>
-        /// method to check if the given password is the same as the confirm password
-        /// </summary>
-        /// <param name="passwordCheck"></param>
-        /// <returns></returns>
         public bool PasswordCheck(string passwordCheck)
         {
             bool logCheck = false;
@@ -89,11 +75,6 @@ namespace Sunshine
             }
             return logCheck;
         }
-
-        /// <summary>
-        /// method that returns the date of today
-        /// </summary>
-        /// <returns></returns>
         public string getDate()
         {
             date = DateTime.Now.ToShortDateString();
@@ -120,7 +101,6 @@ namespace Sunshine
             else
             {
                 sunscreenCountdown = "Time until reapply: " + remainingTime.ToString(@"dd\.hh\:mm\:ss");
-                //lbIndication.Text = formatted;
             }
             return sunscreenCountdown;
         }
@@ -133,9 +113,6 @@ namespace Sunshine
             countdownTimer.Enabled = true;
         }
 
-        /// <summary>
-        /// method to give the user advice based on skin type.
-        /// </summary>
         public string FactorAdvice()
         {
             if (age < 16)
@@ -172,12 +149,6 @@ namespace Sunshine
 
             }
             return factor;
-        }
-        public void CountdownSunscreen()
-        {
-            var hours = 2; //countdown time
-            var start = DateTime.Now; 
-            endTime = start.AddHours(hours); //endTime is a member, not a local variable
         }
         public int GetLevel()
         {
