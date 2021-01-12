@@ -12,13 +12,12 @@ namespace Sunshine
 {
     public partial class Login : Form
     {
-        private static RewardSystem.Level userLevel;
-        public static RewardSystem.Level UserLevel = new RewardSystem.Level();
-  
+        public static RewardSystem.Level UserLevel { get; private set; }
 
         public Login()
         {
             InitializeComponent();
+            UserLevel = new RewardSystem.Level();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -51,7 +50,11 @@ namespace Sunshine
 
         private void Login_Load(object sender, EventArgs e)
         {
+            if (Home.countdownTimer != null)
+            {
+                Home.countdownTimer.Enabled = false;
 
+            }
         }
     }
 }

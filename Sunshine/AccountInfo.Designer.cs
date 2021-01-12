@@ -94,7 +94,7 @@
             // btnConfirm
             // 
             this.btnConfirm.Location = new System.Drawing.Point(224, 282);
-            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(62, 39);
             this.btnConfirm.TabIndex = 5;
@@ -105,7 +105,7 @@
             // tbName
             // 
             this.tbName.Location = new System.Drawing.Point(224, 85);
-            this.tbName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbName.Margin = new System.Windows.Forms.Padding(2);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(91, 20);
             this.tbName.TabIndex = 6;
@@ -113,7 +113,7 @@
             // nudAge
             // 
             this.nudAge.Location = new System.Drawing.Point(224, 119);
-            this.nudAge.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudAge.Margin = new System.Windows.Forms.Padding(2);
             this.nudAge.Name = "nudAge";
             this.nudAge.Size = new System.Drawing.Size(90, 20);
             this.nudAge.TabIndex = 7;
@@ -122,7 +122,7 @@
             // 
             this.cbCountry.FormattingEnabled = true;
             this.cbCountry.Location = new System.Drawing.Point(224, 147);
-            this.cbCountry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbCountry.Margin = new System.Windows.Forms.Padding(2);
             this.cbCountry.Name = "cbCountry";
             this.cbCountry.Size = new System.Drawing.Size(92, 21);
             this.cbCountry.TabIndex = 100;
@@ -131,7 +131,7 @@
             // 
             this.cbSkin.FormattingEnabled = true;
             this.cbSkin.Location = new System.Drawing.Point(224, 178);
-            this.cbSkin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbSkin.Margin = new System.Windows.Forms.Padding(2);
             this.cbSkin.Name = "cbSkin";
             this.cbSkin.Size = new System.Drawing.Size(92, 21);
             this.cbSkin.TabIndex = 9;
@@ -151,9 +151,10 @@
             this.Controls.Add(this.lbAge);
             this.Controls.Add(this.lbName);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AccountInfo";
             this.Text = "AccountInfo";
+            this.Load += new System.EventHandler(this.AccountInfo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudAge)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

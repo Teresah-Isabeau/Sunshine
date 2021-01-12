@@ -27,12 +27,6 @@ namespace RewardSystem
             level = 1;
             pointsNeededToLevelUp = 10;
         }
-        public void ShowPointsAndLevel()
-        {
-            Console.WriteLine("Total Points: " + totalPoints);
-            Console.WriteLine("Level: " + level);
-        }
-
         public int GetPoints()
         {
             totalPoints += 5;
@@ -55,6 +49,22 @@ namespace RewardSystem
                 leveledUp = false;
             }
             return level;
+        }
+        public bool EnoughPointsForReward(int pointCost)
+        {
+            if (pointCost > totalPoints)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public int RedeemPoints(int pointCost)
+        {
+            totalPoints -= pointCost;
+            return totalPoints;
         }
 
     }
@@ -92,14 +102,14 @@ namespace RewardSystem
         public Random coupon { get; private set; }
         public int saveCoupon { get; private set; }
 
-        
+        private string selected;
 
         public Coupon()
         {
             randomPointAmount = new Random();
             randomEnumItem = new Random();
             rewardList = new List<List<string>>();
-            rewardList.Add(new List<string> { "1", "30", "Sunscreen", "6" });
+            rewardList.Add(new List<string> { "1", "Sunscreen", "6", "30" });
             rewardCount = 2;
             coupon = new Random();
         }
@@ -122,53 +132,46 @@ namespace RewardSystem
             addPoints = GeneratePointCost();
             if (leveledUp)
             {
-                rewardList.Add(new List<string> { rewardCount.ToString(), addPoints.ToString(), value.ToString(),
-                    addCoupon.ToString() });
+                rewardList.Add(new List<string> {rewardCount.ToString() ,value.ToString(), addCoupon.ToString(),
+                    addPoints.ToString() });
                 rewardCount++;
             }
             return rewardList;
         }
-        public void ShowRewards()
+        public string Claim(System.Windows.Forms.ListBox listRewards)
         {
-
-            foreach (List<string> sublist in rewardList)
+            System.Windows.Forms.ListBox.SelectedObjectCollection selectedItems = new System.Windows.Forms.ListBox.SelectedObjectCollection(listRewards);
+            selectedItems = listRewards.SelectedItems;
+            if ((listRewards.SelectedIndex + 1) != -1)
             {
-                Console.WriteLine(sublist[0] + " " + sublist[1] + " " + sublist[2] + " " + sublist[3] + "%");
-            }
-        }
-        public void ChooseReward()
-        {
-            if (rewardList.Count == 0)
-            {
-                System.Windows.Forms.MessageBox.Show("No rewards");
-            }
-            else
-            {
-
-                rewardChoice = Console.ReadLine();
-                foreach (List<string> sub in rewardList)
+                for (int i = selectedItems.Count - 1; i >= 0; i--)
                 {
-                    if (rewardChoice == sub[0])
+                    foreach (List<string> sublist in rewardList)
                     {
-                        Console.Clear();
-                        if (EnoughPointsForReward(int.Parse(sub[1])))
+                        if (listRewards.SelectedItem.ToString() == "[" + sublist[0] + "] " + sublist[1] + " " + sublist[2] + "%" + " " + "Point Cost: " + sublist[3])
+
                         {
-                            RedeemPoints(int.Parse(sub[1]));
-                            Console.WriteLine("You chose reward: \n" + sub[0] + " " + sub[1] + " " + sub[2] + " " + sub[3] + "%");
-                            rewardList.Remove(sub);
+                            if (EnoughPointsForReward(int.Parse(sublist[3])))
+                            {
+                                selected = "Last selected reward: " + listRewards.SelectedItem.ToString();
+                                RedeemPoints(int.Parse(sublist[3]));
+                                listRewards.Items.Remove(selectedItems[i]);
+                                rewardList.Remove(sublist);
+                            }
+                            else
+                            {
+                                System.Windows.Forms.MessageBox.Show("Not enough points!");
+
+                            }
+                            break;
                         }
-                        else
-                        {
-                            Console.WriteLine("Not enough points!");
-                        }
-                        break;
                     }
                 }
             }
+            return selected;
         }
         public int GenerateCoupon()
         {
-
             saveCoupon = coupon.Next(5, 25);
             return saveCoupon;
         }
@@ -199,22 +202,6 @@ namespace RewardSystem
         }
 
 
-        public bool EnoughPointsForReward(int pointCost)
-        {
-            if (pointCost > totalPoints)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-        public int RedeemPoints(int pointCost)
-        {
-            totalPoints -= pointCost;
-            return totalPoints;
-        }
     }
 
 }

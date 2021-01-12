@@ -9,28 +9,17 @@ using System.Windows.Forms;
 namespace Sunshine
 {
     //ToDo: edit the variables,
-    //make property for rewards
+    //make list for rewards, take rewards from class Level
+    //take level and totalpoints from class Level
 
     public class User
     {
         private string name;
         private decimal age;
-
-
         private string skinType;
 
-        private string loginEmail;
-        public string LoginEmail
-        {
-            get { return loginEmail; }
-            set { loginEmail = value; }
-        }
-        private string loginPassword;
-        public string LoginPassword
-        {
-            get { return loginPassword; }
-            set { loginPassword = value; }
-        }
+        public string LoginEmail { get; private set; }
+        public string LoginPassword { get; private set; }
 
         private string country;
         private string date;
@@ -42,10 +31,14 @@ namespace Sunshine
 
         public List<List<string>> userRewards { get; private set; }
 
+        public static Timer countdownTimer { get; private set; }
+        private string sunscreenCountdown;
+
+
         public User(string email, string password)
         {
-            this.loginEmail = email;
-            this.loginPassword = password;
+            this.LoginEmail = email;
+            this.LoginPassword = password;
         }
 
         public User()
@@ -89,7 +82,7 @@ namespace Sunshine
         public bool PasswordCheck(string passwordCheck)
         {
             bool logCheck = false;
-            if (loginPassword == passwordCheck)
+            if (LoginPassword == passwordCheck)
             {
                 logCheck = true;
 
@@ -106,6 +99,38 @@ namespace Sunshine
             date = DateTime.Now.ToShortDateString();
             return date;
 
+        }
+
+        public string SunscreenTimer(Timer sunscreenTimer)
+        {
+            countdownTimer = sunscreenTimer;
+            TimeSpan remainingTime = endTime - DateTime.Now;
+            if (remainingTime < TimeSpan.Zero)
+            {
+                countdownTimer.Enabled = false;
+                DialogResult msg = MessageBox.Show("Reapply Sunscreen!");
+                if (msg == DialogResult.OK)
+                {
+                    Login.UserLevel.GeneratePoints();
+                    Login.UserLevel.UserLevel();
+                    Login.UserLevel.AllRewards();
+                    EnableTimer(countdownTimer);
+                }
+            }
+            else
+            {
+                sunscreenCountdown = "Time until reapply: " + remainingTime.ToString(@"dd\.hh\:mm\:ss");
+                //lbIndication.Text = formatted;
+            }
+            return sunscreenCountdown;
+        }
+        public void EnableTimer(Timer sunscreenTimer)
+        {
+            countdownTimer = sunscreenTimer;
+            var minutes = 0.1; //countdown time
+            var start = DateTime.Now; // Use UtcNow instead of Now
+            endTime = start.AddMinutes(minutes); //endTime is a member, not a local variable
+            countdownTimer.Enabled = true;
         }
 
         /// <summary>
@@ -154,24 +179,22 @@ namespace Sunshine
             var start = DateTime.Now; 
             endTime = start.AddHours(hours); //endTime is a member, not a local variable
         }
-
-        public int SaveUserPoints(bool reapplied) 
-        {
-            if (reapplied)
-            {
-                totalPoints = Login.UserLevel.totalPoints;
-            }
-
-            return totalPoints;
-        }
         public int GetLevel()
         {
             level = Login.UserLevel.userLevel;
             return level;
         }
-        public int ShowPoints()
+        public int PointsOfUser() 
         {
+            totalPoints = Login.UserLevel.TotalPoints();
             return totalPoints;
+        }
+
+        public List<List<string>> RewardsOfUser()
+        {
+            userRewards = Login.UserLevel.userRewards;
+            return userRewards;
+
         }
     }
 }

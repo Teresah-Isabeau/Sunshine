@@ -81,6 +81,7 @@
             this.tbPassword.Location = new System.Drawing.Point(329, 120);
             this.tbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(76, 20);
             this.tbPassword.TabIndex = 4;
             // 
@@ -89,6 +90,7 @@
             this.tbConfirm.Location = new System.Drawing.Point(329, 156);
             this.tbConfirm.Margin = new System.Windows.Forms.Padding(2);
             this.tbConfirm.Name = "tbConfirm";
+            this.tbConfirm.PasswordChar = '*';
             this.tbConfirm.Size = new System.Drawing.Size(76, 20);
             this.tbConfirm.TabIndex = 5;
             // 

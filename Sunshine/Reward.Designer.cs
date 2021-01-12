@@ -116,9 +116,9 @@
             // listRewards
             // 
             this.listRewards.FormattingEnabled = true;
-            this.listRewards.Location = new System.Drawing.Point(415, 72);
+            this.listRewards.Location = new System.Drawing.Point(364, 72);
             this.listRewards.Name = "listRewards";
-            this.listRewards.Size = new System.Drawing.Size(158, 173);
+            this.listRewards.Size = new System.Drawing.Size(208, 173);
             this.listRewards.TabIndex = 7;
             // 
             // lbLevel

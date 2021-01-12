@@ -12,15 +12,14 @@ namespace Sunshine
 {
     public partial class Reward : Form
     {
-        private int totalUserPoints;
-        public Reward(int totalPoints)
+        public Reward()
         {
             InitializeComponent();
-            this.totalUserPoints = totalPoints;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             Home form5 = new Home();
             form5.Show();
@@ -35,54 +34,29 @@ namespace Sunshine
         {
             Home.countdownTimer.Enabled = false;
 
-            lbPoints.Text = "Points: " + Login.UserLevel.totalPoints.ToString();
-            lbLevel.Text = "Level: " + Login.UserLevel.userLevel.ToString();
-
-            foreach (List<string> sublist in Login.UserLevel.userRewards)
+            lbPoints.Text = "Points: " + CreateAccount.NewUser.PointsOfUser();
+            lbLevel.Text = "Level: " + CreateAccount.NewUser.GetLevel();
+            try
             {
-                listRewards.Items.Add(sublist[0] + " " + sublist[1] + " " + sublist[2] + " " + sublist[3] + "%");
+                foreach (List<string> sublist in Login.UserLevel.userRewards)
+                {
+                    listRewards.Items.Add("[" + sublist[0] + "] " + sublist[1] + " " + sublist[2] + "%" + " " + "Point Cost: " + sublist[3]);
+                }
             }
+            catch (System.NullReferenceException)
+            {
+                listRewards.Text = "No rewards yet";
+            }
+
 
         }
 
         
         private void btnClaim_Click(object sender, EventArgs e)
         {
-            ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(listRewards);
-            selectedItems = listRewards.SelectedItems;
-            if ((listRewards.SelectedIndex + 1) != -1)
-            {
-                for (int i = selectedItems.Count - 1; i >= 0; i--)
-                {
+            lbClaimedReward.Text = Login.UserLevel.GetCoupon(listRewards);
+            lbPoints.Text = "Points: " + CreateAccount.NewUser.PointsOfUser();
 
-                    foreach (List<string> sublist in Login.UserLevel.userRewards)
-                    {
-
-                        if (listRewards.SelectedItem.ToString() == sublist[0] + " " + sublist[1] + " " + sublist[2] + " " + sublist[3] + "%")
-                        {
-                            listRewards.Items.Remove(selectedItems[i]);
-                            Login.UserLevel.userRewards.Remove(sublist);
-                            break;
-
-                        }
-                    }
-                    
-
-
-
-                }
-                print();
-            }
-        }
-        public void print()
-        {
-            foreach (List<string> sublist in Login.UserLevel.userRewards)
-            {
-                foreach (string item in sublist)
-                {
-                    MessageBox.Show(item);
-                }
-            }
         }
     }
 }

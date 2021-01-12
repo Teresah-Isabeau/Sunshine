@@ -24,5 +24,9 @@ namespace Sunshine
             Login form2 = new Login();
             form2.Show(); 
         }
+
+        private void Welcome_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

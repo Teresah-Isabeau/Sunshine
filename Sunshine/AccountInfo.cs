@@ -61,6 +61,13 @@ namespace Sunshine
             
         }
 
+        private void AccountInfo_Load(object sender, EventArgs e)
+        {
+            if (Home.countdownTimer != null)
+            {
+                Home.countdownTimer.Enabled = false;
 
+            }
+        }
     }
 }

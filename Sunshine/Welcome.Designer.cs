@@ -35,17 +35,19 @@
             // lbWelcome
             // 
             this.lbWelcome.AutoSize = true;
-            this.lbWelcome.Location = new System.Drawing.Point(333, 57);
+            this.lbWelcome.Location = new System.Drawing.Point(250, 46);
+            this.lbWelcome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbWelcome.Name = "lbWelcome";
-            this.lbWelcome.Size = new System.Drawing.Size(132, 17);
+            this.lbWelcome.Size = new System.Drawing.Size(102, 13);
             this.lbWelcome.TabIndex = 0;
             this.lbWelcome.Text = "Welcome Sunshine!";
             // 
             // btnContinue
             // 
-            this.btnContinue.Location = new System.Drawing.Point(358, 336);
+            this.btnContinue.Location = new System.Drawing.Point(268, 273);
+            this.btnContinue.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(75, 23);
+            this.btnContinue.Size = new System.Drawing.Size(56, 19);
             this.btnContinue.TabIndex = 1;
             this.btnContinue.Text = "Continue";
             this.btnContinue.UseVisualStyleBackColor = true;
@@ -53,13 +55,15 @@
             // 
             // Welcome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.lbWelcome);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Welcome";
             this.Text = "Welcome";
+            this.Load += new System.EventHandler(this.Welcome_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
