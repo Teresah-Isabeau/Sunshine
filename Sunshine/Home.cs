@@ -59,7 +59,7 @@ namespace Sunshine
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimeNow_Tick(object sender, EventArgs e) 
         {
             DateTime timeNow = DateTime.Now;
             lbTime.Text = DateTime.Now.ToLongTimeString();
