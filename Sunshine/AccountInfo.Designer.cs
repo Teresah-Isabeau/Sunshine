@@ -130,6 +130,13 @@
             // cbSkin
             // 
             this.cbSkin.FormattingEnabled = true;
+            this.cbSkin.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6"});
             this.cbSkin.Location = new System.Drawing.Point(224, 178);
             this.cbSkin.Margin = new System.Windows.Forms.Padding(2);
             this.cbSkin.Name = "cbSkin";

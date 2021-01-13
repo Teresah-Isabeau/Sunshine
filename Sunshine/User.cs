@@ -123,7 +123,6 @@ namespace Sunshine
             {
                 switch (int.Parse(skinType))
                 {
-                
                     case 1:
                         factor = "Your skin is very sensitive to the sun.\nUse at least sunscreen factor 30 or higher.";
                         break;
@@ -146,7 +145,6 @@ namespace Sunshine
                         factor = "";
                         break;
                 }
-
             }
             return factor;
         }
@@ -165,7 +163,6 @@ namespace Sunshine
         {
             userRewards = Login.UserLevel.userRewards;
             return userRewards;
-
         }
     }
 }

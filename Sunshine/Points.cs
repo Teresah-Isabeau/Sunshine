@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace RewardSystem
 {
-    //ToDo: bind the point given to the notification
 
     /// <summary>
     /// method getPoints gives the user points
@@ -66,7 +65,6 @@ namespace RewardSystem
             totalPoints -= pointCost;
             return totalPoints;
         }
-
     }
     public enum Item
     {
@@ -138,34 +136,23 @@ namespace RewardSystem
             }
             return rewardList;
         }
-        public string Claim(System.Windows.Forms.ListBox listRewards)
+        public string Claim(string chosenReward)
         {
-            System.Windows.Forms.ListBox.SelectedObjectCollection selectedItems = new System.Windows.Forms.ListBox.SelectedObjectCollection(listRewards);
-            selectedItems = listRewards.SelectedItems;
-            if ((listRewards.SelectedIndex + 1) != -1)
+            foreach (List<string> sublist in rewardList)
             {
-                for (int i = selectedItems.Count - 1; i >= 0; i--)
+                if (chosenReward == "[" + sublist[0] + "] " + sublist[1] + " " + sublist[2] + "%" + " " + "Point Cost: " + sublist[3])
                 {
-                    foreach (List<string> sublist in rewardList)
+                    if (EnoughPointsForReward(int.Parse(sublist[3])))
                     {
-                        if (listRewards.SelectedItem.ToString() == "[" + sublist[0] + "] " + sublist[1] + " " + sublist[2] + "%" + " " + "Point Cost: " + sublist[3])
-
-                        {
-                            if (EnoughPointsForReward(int.Parse(sublist[3])))
-                            {
-                                selected = "Last selected reward: " + listRewards.SelectedItem.ToString();
-                                RedeemPoints(int.Parse(sublist[3]));
-                                listRewards.Items.Remove(selectedItems[i]);
-                                rewardList.Remove(sublist);
-                            }
-                            else
-                            {
-                                System.Windows.Forms.MessageBox.Show("Not enough points!");
-
-                            }
-                            break;
-                        }
+                        selected = chosenReward;
+                        RedeemPoints(int.Parse(sublist[3]));
+                        rewardList.Remove(sublist);
                     }
+                    else
+                    {
+                        selected = "Not enough points!";
+                    }
+                    break;
                 }
             }
             return selected;
