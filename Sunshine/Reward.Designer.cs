@@ -93,7 +93,7 @@
             // listRewards
             // 
             this.listRewards.FormattingEnabled = true;
-            this.listRewards.Location = new System.Drawing.Point(298, 65);
+            this.listRewards.Location = new System.Drawing.Point(298, 55);
             this.listRewards.Name = "listRewards";
             this.listRewards.Size = new System.Drawing.Size(238, 186);
             this.listRewards.TabIndex = 7;
@@ -109,7 +109,7 @@
             // 
             // btnClaim
             // 
-            this.btnClaim.Location = new System.Drawing.Point(347, 257);
+            this.btnClaim.Location = new System.Drawing.Point(343, 247);
             this.btnClaim.Name = "btnClaim";
             this.btnClaim.Size = new System.Drawing.Size(140, 32);
             this.btnClaim.TabIndex = 9;
@@ -120,7 +120,7 @@
             // lbClaimedReward
             // 
             this.lbClaimedReward.AutoSize = true;
-            this.lbClaimedReward.Location = new System.Drawing.Point(295, 327);
+            this.lbClaimedReward.Location = new System.Drawing.Point(295, 321);
             this.lbClaimedReward.Name = "lbClaimedReward";
             this.lbClaimedReward.Size = new System.Drawing.Size(113, 13);
             this.lbClaimedReward.TabIndex = 10;

@@ -32,7 +32,11 @@ namespace Sunshine
             accountPassword = tbPassword.Text;
             NewUser = new User(accountEmail, accountPassword);
 
-            if (NewUser.PasswordCheck(tbConfirm.Text))
+            if (string.IsNullOrWhiteSpace(tbEmail.Text) || string.IsNullOrWhiteSpace(tbPassword.Text) || string.IsNullOrWhiteSpace(tbConfirm.Text))
+            {
+                MessageBox.Show("Please fill in every field!");
+            }
+            else if (NewUser.PasswordCheck(tbConfirm.Text))
             {
                 this.Hide();
                 AccountInfo form4 = new AccountInfo();

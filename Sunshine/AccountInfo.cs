@@ -35,7 +35,7 @@ namespace Sunshine
         {
             CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
 
-            var rez = cultures.Select(cult => (new RegionInfo(cult.LCID)).DisplayName).Distinct().OrderBy(q => q).ToList();
+            var rez = cultures.Select(cult => (new RegionInfo(cult.LCID)).EnglishName).Distinct().OrderBy(q => q).ToList();
 
             return rez;
         }
