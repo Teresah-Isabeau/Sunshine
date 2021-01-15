@@ -61,8 +61,7 @@ namespace Sunshine
         }
 
         /// <summary>
-        /// Haalt data op uit de database.
-        /// Voert de select query uit en zet de data in een datatable object.
+        /// Zet de data in een datatable object.
         /// </summary>
         /// <param name="sql"></param>
         /// <param name="sqlParameters"></param>
