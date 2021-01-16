@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace RewardSystem
 {
-    //ToDO: change userRewards type to Coupon instead of string
 
     /// <summary>
     /// class to bind User to the rewardSystem
@@ -17,7 +16,7 @@ namespace RewardSystem
     /// </summary>
     public class Level
     {
-        public List<List<Coupon>> coupons { get; private set;}
+
         public List<List<string>> userRewards { get; private set; }
         public int userLevel { get; private set; }
         public int rewardAmount { get; private set; }
@@ -30,6 +29,7 @@ namespace RewardSystem
         {
             newUserPoints = new Coupon();
         }
+
         public int CountRewards()
         {
             rewardAmount = userRewards.Count;

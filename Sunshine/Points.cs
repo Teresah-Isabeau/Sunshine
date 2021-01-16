@@ -89,6 +89,7 @@ namespace RewardSystem
     ///
     public class Coupon : Points
     {
+
         public List<List<string>> rewardList { get; private set; }
         public Random randomEnumItem { get; private set; }
         public string rewardChoice { get; private set; }
@@ -102,6 +103,9 @@ namespace RewardSystem
 
         private string selected;
 
+        public Item randomCouponItem { get; private set; }
+            
+
         public Coupon()
         {
             randomPointAmount = new Random();
@@ -110,6 +114,18 @@ namespace RewardSystem
             rewardList.Add(new List<string> { "1", "Sunscreen", "6", "30" });
             rewardCount = 2;
             coupon = new Random();
+        }
+        public Coupon(int levelNum, Item randomItem, int coupon, int pointCost)
+        {
+            levelNum = rewardCount;
+            randomItem = randomCouponItem;
+            coupon = saveCoupon;
+            pointCost = savePointCost;
+        }
+        public Item GenerateRandomItem()
+        {
+            randomCouponItem = (Item)(new Random()).Next(0, 3);
+            return randomCouponItem;
         }
 
         //Generics allow you to define the specification of the data type of programming elements in a class or a method,

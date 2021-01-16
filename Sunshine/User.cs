@@ -107,9 +107,9 @@ namespace Sunshine
         public void EnableTimer(Timer sunscreenTimer)
         {
             countdownTimer = sunscreenTimer;
-            var minutes = 0.1; //countdown time
-            var start = DateTime.Now; // Use UtcNow instead of Now
-            endTime = start.AddMinutes(minutes); //endTime is a member, not a local variable
+            var minutes = 0.1; 
+            var start = DateTime.Now; 
+            endTime = start.AddMinutes(minutes); 
             countdownTimer.Enabled = true;
         }
 
