@@ -13,7 +13,7 @@ namespace Sunshine
 {
     public partial class Login : Form
     {
-        connection con = new connection();
+        Database con = new Database();
         string eMail, password;
 
         public Login()
