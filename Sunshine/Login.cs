@@ -19,7 +19,7 @@ namespace Sunshine
         public static RewardSystem.Level UserLevel { get; private set; }
 
         public Login()
-        { 
+        {
             InitializeComponent();
             UserLevel = new RewardSystem.Level();
         }
@@ -29,29 +29,29 @@ namespace Sunshine
             try
             {
 
-                ConnectToDatabase();       
+                ConnectToDatabase();
             }
             catch
             {
                 MessageBox.Show("Connection Error", "Information");
             }
 
-          /*      if (CreateAccount.NewUser.LoginCheck(tbEmail.Text, tbPassword.Text, CreateAccount.NewUser.LoginEmail, CreateAccount.NewUser.LoginPassword))
-                {
-                    this.Hide();
-                    Home form5 = new Home();
-                    form5.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Wrong email or password. Please try again!");
-                }
-            }
-            catch(System.NullReferenceException)
-            {
-                MessageBox.Show("No account found, please make an account first!");
-            } */
-               
+            /*      if (CreateAccount.NewUser.LoginCheck(tbEmail.Text, tbPassword.Text, CreateAccount.NewUser.LoginEmail, CreateAccount.NewUser.LoginPassword))
+                  {
+                      this.Hide();
+                      Home form5 = new Home();
+                      form5.Show();
+                  }
+                  else
+                  {
+                      MessageBox.Show("Wrong email or password. Please try again!");
+                  }
+              }
+              catch(System.NullReferenceException)
+              {
+                  MessageBox.Show("No account found, please make an account first!");
+              } */
+
 
         }
         private void btnNewAccount_Click(object sender, EventArgs e)
@@ -96,15 +96,14 @@ namespace Sunshine
             else
             {
                 MessageBox.Show("Username or Password is empty", "Information");
+            }
+        }
 
-
-      /*  private void Login_Load(object sender, EventArgs e)
+        private void Login_Load(object sender, EventArgs e)
         {
             if (Home.countdownTimer != null)
             {
-                Home.countdownTimer.Enabled = false; */
-
-
+                Home.countdownTimer.Enabled = false;
             }
         }
     }

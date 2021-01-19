@@ -83,7 +83,6 @@ namespace Sunshine
                 return false;              
             }
         }
-
         private void CreateAccount_Load(object sender, EventArgs e)
         {
 

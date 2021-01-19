@@ -33,6 +33,7 @@ namespace Sunshine
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //TEST
             MessageBox.Show(arduino);
         }
     }
