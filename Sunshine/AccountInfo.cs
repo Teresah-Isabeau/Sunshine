@@ -11,10 +11,6 @@ using System.Globalization;
 
 namespace Sunshine
 {
-    //ToDo: when user edits information, show the information already given in the boxes,
-    //make a check to see if the variables are null,
-    //if yes show blank,
-    //if no show the information
     public partial class AccountInfo : Form
     {
         private decimal age;
@@ -29,13 +25,12 @@ namespace Sunshine
             {
                 cbCountry.Items.Add(item);
             }
-
         }
         public static List<string> GetAllCountrysNames()
         {
             CultureInfo[] cultures = CultureInfo.GetCultures(CultureTypes.SpecificCultures);
 
-            var rez = cultures.Select(cult => (new RegionInfo(cult.LCID)).DisplayName).Distinct().OrderBy(q => q).ToList();
+            var rez = cultures.Select(cult => (new RegionInfo(cult.LCID)).EnglishName).Distinct().OrderBy(q => q).ToList();
 
             return rez;
         }
@@ -60,7 +55,13 @@ namespace Sunshine
             }
             
         }
+        private void AccountInfo_Load(object sender, EventArgs e)
+        {
+            if (Home.countdownTimer != null)
+            {
+                Home.countdownTimer.Enabled = false;
 
-
+            }
+        }
     }
 }

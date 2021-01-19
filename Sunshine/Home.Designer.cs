@@ -35,8 +35,6 @@
             this.lbDate = new System.Windows.Forms.Label();
             this.lbUV = new System.Windows.Forms.Label();
             this.lbIndication = new System.Windows.Forms.Label();
-            this.lbCountry = new System.Windows.Forms.Label();
-            this.cbCountry = new System.Windows.Forms.ComboBox();
             this.btnProfile = new System.Windows.Forms.Button();
             this.btLogout = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -107,25 +105,6 @@
             this.lbIndication.TabIndex = 5;
             this.lbIndication.Text = "Indication";
             // 
-            // lbCountry
-            // 
-            this.lbCountry.AutoSize = true;
-            this.lbCountry.Location = new System.Drawing.Point(193, 311);
-            this.lbCountry.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbCountry.Name = "lbCountry";
-            this.lbCountry.Size = new System.Drawing.Size(43, 13);
-            this.lbCountry.TabIndex = 6;
-            this.lbCountry.Text = "Country";
-            // 
-            // cbCountry
-            // 
-            this.cbCountry.FormattingEnabled = true;
-            this.cbCountry.Location = new System.Drawing.Point(262, 308);
-            this.cbCountry.Margin = new System.Windows.Forms.Padding(2);
-            this.cbCountry.Name = "cbCountry";
-            this.cbCountry.Size = new System.Drawing.Size(92, 21);
-            this.cbCountry.TabIndex = 7;
-            // 
             // btnProfile
             // 
             this.btnProfile.Location = new System.Drawing.Point(12, 14);
@@ -149,7 +128,7 @@
             // 
             // timer1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.TimeNow_Tick);
             // 
             // lbSunscreen
             // 
@@ -168,7 +147,6 @@
             // lblOutOfSun
             // 
             this.lblOutOfSun.AutoSize = true;
-            this.lblOutOfSun.Enabled = false;
             this.lblOutOfSun.Location = new System.Drawing.Point(201, 196);
             this.lblOutOfSun.Name = "lblOutOfSun";
             this.lblOutOfSun.Size = new System.Drawing.Size(35, 13);
@@ -194,8 +172,6 @@
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.btLogout);
             this.Controls.Add(this.btnProfile);
-            this.Controls.Add(this.cbCountry);
-            this.Controls.Add(this.lbCountry);
             this.Controls.Add(this.lbIndication);
             this.Controls.Add(this.lbUV);
             this.Controls.Add(this.lbDate);
@@ -219,8 +195,6 @@
         private System.Windows.Forms.Label lbDate;
         private System.Windows.Forms.Label lbUV;
         private System.Windows.Forms.Label lbIndication;
-        private System.Windows.Forms.Label lbCountry;
-        private System.Windows.Forms.ComboBox cbCountry;
         private System.Windows.Forms.Button btnProfile;
         private System.Windows.Forms.Button btLogout;
         private System.Windows.Forms.Timer timer1;
