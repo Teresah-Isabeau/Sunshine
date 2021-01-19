@@ -12,11 +12,9 @@ namespace Sunshine
 {
     public partial class Reward : Form
     {
-        private int totalUserPoints;
-        public Reward(int totalPoints)
+        public Reward()
         {
             InitializeComponent();
-            this.totalUserPoints = totalPoints;
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -25,9 +23,46 @@ namespace Sunshine
             Home form5 = new Home();
             form5.Show();
         }
-
         private void btnGet_Click(object sender, EventArgs e)
         {
+
+        }
+        private void Reward_Load(object sender, EventArgs e)
+        {
+            Home.countdownTimer.Enabled = false;
+
+            lbPoints.Text = "Points: " + CreateAccount.NewUser.PointsOfUser();
+            lbLevel.Text = "Level: " + CreateAccount.NewUser.GetLevel();
+            try
+            {
+                foreach (List<string> sublist in Login.UserLevel.userRewards)
+                {
+                    listRewards.Items.Add("[" + sublist[0] + "] " + sublist[1] + " " + sublist[2] + "%" + " " + "Point Cost: " + sublist[3]);
+                }
+            }
+            catch (System.NullReferenceException)
+            {
+                listRewards.Text = "No rewards yet";
+            }
+        }
+
+        
+        private void btnClaim_Click(object sender, EventArgs e)
+        {
+            ListBox.SelectedObjectCollection selectedItems = new ListBox.SelectedObjectCollection(listRewards);
+            selectedItems = listRewards.SelectedItems;
+            string chosenReward = listRewards.SelectedItem.ToString();
+            string message = "Not enough points!";
+            string claimedReward = Login.UserLevel.GetCoupon(chosenReward); 
+            if (claimedReward == message)
+            {
+                MessageBox.Show(message);
+            }
+            else
+            {
+                listRewards.Items.Remove(claimedReward);
+            }
+            lbPoints.Text = "Points: " + CreateAccount.NewUser.PointsOfUser();
 
         }
     }

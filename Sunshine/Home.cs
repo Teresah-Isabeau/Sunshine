@@ -12,14 +12,12 @@ namespace Sunshine
 {
     public partial class Home : Form
     {
-        User newData = new User();
-        DateTime endTime;
-        private bool reapplied = false;
-        private int totalUserPoints;
+        public static Timer countdownTimer { get; set; }
+
         public Home()
         {
             InitializeComponent();
-
+            countdownTimer = sunscreenTimer;
 
         }
 
@@ -30,16 +28,14 @@ namespace Sunshine
         /// <param name="e"></param>
         private void Home_Load(object sender, EventArgs e)
         {
-            lbDate.Text = "Date: " + newData.getDate();
-
+            lbDate.Text = "Date: " + CreateAccount.NewUser.getDate();
+            lblOutOfSun.Visible = false;
 
             timer1.Enabled = true;
             timer1.Interval = 1000;
+            lbSunscreen.Text = "Sunscreen Factor: " + CreateAccount.NewUser.FactorAdvice();
 
-
-            lbSunscreen.Text = "Sunscreen Factor: " + newData.FactorAdvice();
-
-            EnableTimer();
+            CreateAccount.NewUser.EnableTimer(countdownTimer);
         }
         private void btnProfile_Click(object sender, EventArgs e)
         {
@@ -51,7 +47,7 @@ namespace Sunshine
         private void btnPoints_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Reward form6 = new Reward(totalUserPoints);
+            Reward form6 = new Reward();
             form6.Show();
         }
 
@@ -63,39 +59,21 @@ namespace Sunshine
 
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void TimeNow_Tick(object sender, EventArgs e) 
         {
+            DateTime timeNow = DateTime.Now;
             lbTime.Text = DateTime.Now.ToLongTimeString();
+            if (timeNow.Hour >= 12 && timeNow.Hour < 15)
+            {
+                lblOutOfSun.Visible = true;
+                lblOutOfSun.Text = "You should stay out of the sun between 12 and 15.";
+            }
         }
 
         private void sunscreenTimer_Tick(object sender, EventArgs e)
         {
+            lbIndication.Text = CreateAccount.NewUser.SunscreenTimer(countdownTimer);
 
-            TimeSpan remainingTime = endTime - DateTime.Now;
-            if (remainingTime < TimeSpan.Zero)
-            {
-                sunscreenTimer.Enabled = false;
-                reapplied = true;
-                DialogResult msg = MessageBox.Show("Reapply Sunscreen!");
-                if (msg == DialogResult.OK)
-                {
-                    totalUserPoints = newData.TotalPoints(reapplied);
-                    EnableTimer();
-
-                }
-            }
-            else
-            {
-                string formatted = remainingTime.ToString(@"dd\.hh\:mm\:ss");
-                lbIndication.Text = formatted;
-            }
-        }
-        private void EnableTimer()
-        {
-            var minutes = 1; //countdown time
-            var start = DateTime.Now; // Use UtcNow instead of Now
-            endTime = start.AddMinutes(minutes); //endTime is a member, not a local variable
-            sunscreenTimer.Enabled = true;
         }
     }
 }
