@@ -9,7 +9,7 @@ using System.Windows.Forms;
 namespace Sunshine
 {
     //ToDo: edit the variables,
-    //make property for rewards
+    //make property for rewards.
 
     public class User
     {
