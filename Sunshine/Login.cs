@@ -16,12 +16,10 @@ namespace Sunshine
 
         Database con = new Database();
         string eMail, password;
+        public static RewardSystem.Level UserLevel { get; private set; }
 
         public Login()
         { 
-
-       // public static RewardSystem.Level UserLevel { get; private set; }
-
             InitializeComponent();
             UserLevel = new RewardSystem.Level();
         }
