@@ -45,10 +45,6 @@ namespace Sunshine
             this.LoginPassword = password;
         }
 
-        public User()
-        {
-
-        }
         public void UserInformation(string Name, decimal Age, string Country, string SkinType)
         {
             name = Name;

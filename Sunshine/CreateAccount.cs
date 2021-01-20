@@ -35,7 +35,7 @@ namespace Sunshine
        /* {
             accountEmail = tbEmail.Text;
             accountPassword = tbPassword.Text;
-            NewUser = new User(accountEmail, accountPassword);
+            
 
             if (string.IsNullOrWhiteSpace(tbEmail.Text) || string.IsNullOrWhiteSpace(tbPassword.Text) || string.IsNullOrWhiteSpace(tbConfirm.Text))
             {
@@ -45,6 +45,7 @@ namespace Sunshine
 
             {
                 MessageBox.Show("Created account succesfully!", "Information");
+                newUser = new User(tbEmail.Text, tbPassword.Text);
                 this.Hide();
                 AccountInfo form4 = new AccountInfo();
                 form4.Show();

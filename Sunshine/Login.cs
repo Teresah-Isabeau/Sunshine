@@ -30,6 +30,7 @@ namespace Sunshine
             {
 
                 ConnectToDatabase();
+
             }
             catch
             {
@@ -86,6 +87,7 @@ namespace Sunshine
 
                     this.Hide();
                     Home form5 = new Home();
+
                     form5.Show();
                 }
                 else
