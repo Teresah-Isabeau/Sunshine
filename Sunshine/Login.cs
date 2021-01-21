@@ -25,36 +25,21 @@ namespace Sunshine
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
-        {
-            try
-            {
+        {                                  
 
-                ConnectToDatabase();
-
+            if (CreateAccount.NewUser.LoginCheck(tbEmail.Text, tbPassword.Text, CreateAccount.NewUser.LoginEmail, CreateAccount.NewUser.LoginPassword))
+            {       
+                ConnectToDatabase();        
+                this.Hide();                
+                Home form5 = new Home();            
+                form5.Show();
             }
-            catch
+            else
             {
-                MessageBox.Show("Connection Error", "Information");
+                MessageBox.Show("Wrong email or password. Please try again!");
             }
-
-            /*      if (CreateAccount.NewUser.LoginCheck(tbEmail.Text, tbPassword.Text, CreateAccount.NewUser.LoginEmail, CreateAccount.NewUser.LoginPassword))
-                  {
-                      this.Hide();
-                      Home form5 = new Home();
-                      form5.Show();
-                  }
-                  else
-                  {
-                      MessageBox.Show("Wrong email or password. Please try again!");
-                  }
-              }
-              catch(System.NullReferenceException)
-              {
-                  MessageBox.Show("No account found, please make an account first!");
-              } */
-
-
         }
+       
         private void btnNewAccount_Click(object sender, EventArgs e)
         {
             this.Hide();

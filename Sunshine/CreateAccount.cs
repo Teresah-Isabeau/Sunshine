@@ -30,22 +30,22 @@ namespace Sunshine
         private void btnRegister_Click(object sender, EventArgs e)
 
         {          
-            if (RegisterToDatabase() == true)
-
-       /* {
+            
             accountEmail = tbEmail.Text;
             accountPassword = tbPassword.Text;
-            
+            newUser = new User(tbEmail.Text, tbPassword.Text);
+
 
             if (string.IsNullOrWhiteSpace(tbEmail.Text) || string.IsNullOrWhiteSpace(tbPassword.Text) || string.IsNullOrWhiteSpace(tbConfirm.Text))
             {
                 MessageBox.Show("Please fill in every field!");
             }
-            else if (NewUser.PasswordCheck(tbConfirm.Text)) */
+            else if (NewUser.PasswordCheck(tbConfirm.Text)) 
 
             {
+                RegisterToDatabase();
                 MessageBox.Show("Created account succesfully!", "Information");
-                newUser = new User(tbEmail.Text, tbPassword.Text);
+                
                 this.Hide();
                 AccountInfo form4 = new AccountInfo();
                 form4.Show();
