@@ -59,13 +59,14 @@
             // 
             // btnBack
             // 
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(140)))), ((int)(((byte)(10)))));
             this.btnBack.Location = new System.Drawing.Point(23, 23);
             this.btnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 41);
             this.btnBack.TabIndex = 6;
             this.btnBack.Text = "Back";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // listRewards
@@ -73,7 +74,7 @@
             this.listRewards.FormattingEnabled = true;
             this.listRewards.ItemHeight = 16;
             this.listRewards.Location = new System.Drawing.Point(23, 321);
-            this.listRewards.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listRewards.Margin = new System.Windows.Forms.Padding(4);
             this.listRewards.Name = "listRewards";
             this.listRewards.Size = new System.Drawing.Size(316, 228);
             this.listRewards.TabIndex = 7;
@@ -94,8 +95,8 @@
             this.btnClaim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(115)))), ((int)(((byte)(104)))));
             this.btnClaim.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnClaim.ForeColor = System.Drawing.Color.White;
-            this.btnClaim.Location = new System.Drawing.Point(87, 557);
-            this.btnClaim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClaim.Location = new System.Drawing.Point(85, 557);
+            this.btnClaim.Margin = new System.Windows.Forms.Padding(4);
             this.btnClaim.Name = "btnClaim";
             this.btnClaim.Size = new System.Drawing.Size(187, 39);
             this.btnClaim.TabIndex = 9;

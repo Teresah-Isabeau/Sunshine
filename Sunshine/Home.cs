@@ -66,7 +66,7 @@ namespace Sunshine
             if (timeNow.Hour >= 12 && timeNow.Hour < 15)
             {
                 lblOutOfSun.Visible = true;
-                lblOutOfSun.Text = "You should stay out of the sun between 12 and 15.";
+                lblOutOfSun.Text = "You should stay out of the sun between\n12 and 15.";
             }
         }
 

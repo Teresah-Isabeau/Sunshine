@@ -44,7 +44,7 @@
             this.lbLogin.AutoSize = true;
             this.lbLogin.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(115)))), ((int)(((byte)(104)))));
-            this.lbLogin.Location = new System.Drawing.Point(131, 186);
+            this.lbLogin.Location = new System.Drawing.Point(134, 186);
             this.lbLogin.Name = "lbLogin";
             this.lbLogin.Size = new System.Drawing.Size(90, 38);
             this.lbLogin.TabIndex = 0;
@@ -92,7 +92,7 @@
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(240)))), ((int)(((byte)(235)))));
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnLogin.ForeColor = System.Drawing.Color.Black;
-            this.btnLogin.Location = new System.Drawing.Point(109, 378);
+            this.btnLogin.Location = new System.Drawing.Point(110, 378);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(135, 40);
@@ -106,7 +106,7 @@
             this.btnNewAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(115)))), ((int)(((byte)(104)))));
             this.btnNewAccount.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnNewAccount.ForeColor = System.Drawing.Color.White;
-            this.btnNewAccount.Location = new System.Drawing.Point(97, 422);
+            this.btnNewAccount.Location = new System.Drawing.Point(101, 422);
             this.btnNewAccount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNewAccount.Name = "btnNewAccount";
             this.btnNewAccount.Size = new System.Drawing.Size(151, 40);
@@ -118,9 +118,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Sunshine.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(97, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(80, -17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(181, 131);
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;

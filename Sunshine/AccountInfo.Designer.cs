@@ -48,7 +48,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.2F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(115)))), ((int)(((byte)(104)))));
-            this.label1.Location = new System.Drawing.Point(43, 195);
+            this.label1.Location = new System.Drawing.Point(55, 195);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 64);
             this.label1.TabIndex = 0;
@@ -99,7 +99,7 @@
             this.btnConfirm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(115)))), ((int)(((byte)(104)))));
             this.btnConfirm.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnConfirm.ForeColor = System.Drawing.Color.White;
-            this.btnConfirm.Location = new System.Drawing.Point(105, 553);
+            this.btnConfirm.Location = new System.Drawing.Point(109, 553);
             this.btnConfirm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(135, 40);
@@ -152,9 +152,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Sunshine.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(80, 22);
+            this.pictureBox1.Location = new System.Drawing.Point(78, -8);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(192, 146);
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 101;
             this.pictureBox1.TabStop = false;

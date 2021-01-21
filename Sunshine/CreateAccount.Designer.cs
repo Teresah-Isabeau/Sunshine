@@ -101,7 +101,7 @@
             this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(115)))), ((int)(((byte)(104)))));
             this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Location = new System.Drawing.Point(96, 517);
+            this.btnRegister.Location = new System.Drawing.Point(108, 517);
             this.btnRegister.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(135, 40);
@@ -115,7 +115,7 @@
             this.lbCreateAccount.AutoSize = true;
             this.lbCreateAccount.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold);
             this.lbCreateAccount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(115)))), ((int)(((byte)(104)))));
-            this.lbCreateAccount.Location = new System.Drawing.Point(60, 168);
+            this.lbCreateAccount.Location = new System.Drawing.Point(70, 177);
             this.lbCreateAccount.Name = "lbCreateAccount";
             this.lbCreateAccount.Size = new System.Drawing.Size(217, 38);
             this.lbCreateAccount.TabIndex = 7;
@@ -124,9 +124,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Sunshine.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(62, -23);
+            this.pictureBox1.Location = new System.Drawing.Point(77, -26);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(215, 188);
+            this.pictureBox1.Size = new System.Drawing.Size(200, 200);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;

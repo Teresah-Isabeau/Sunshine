@@ -43,8 +43,8 @@ namespace Sunshine
             else if (NewUser.PasswordCheck(tbConfirm.Text)) 
 
             {
-                RegisterToDatabase();
-                MessageBox.Show("Created account succesfully!", "Information");
+                //RegisterToDatabase();
+                //MessageBox.Show("Created account succesfully!", "Information");
                 
                 this.Hide();
                 AccountInfo form4 = new AccountInfo();
@@ -52,7 +52,7 @@ namespace Sunshine
             }
             else
             {
-                MessageBox.Show("Failed to create account", "Information");
+               // MessageBox.Show("Failed to create account", "Information");
             }
         }
         /// <summary>
