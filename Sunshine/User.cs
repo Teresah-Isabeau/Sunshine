@@ -113,29 +113,29 @@ namespace Sunshine
         {
             if (age < 16)
             {
-                factor = "Children neet to use at least sunscreen factor 30 or 50.";
+                factor = "Children need to use at least\nsunscreen factor 30 or 50.";
             }
             else if (age > 18)
             {
                 switch (int.Parse(skinType))
                 {
                     case 1:
-                        factor = "Your skin is very sensitive to the sun.\nUse at least sunscreen factor 30 or higher.";
+                        factor = "Your skin is very sensitive\nto the sun. Use at least sun-\nscreen factor 30 or higher.";
                         break;
                     case 2:
-                        factor = "Your skin is very sensitive to the sun.\nUse at least sunscreen factor 30 or higher.";
+                        factor = "Your skin is very sensitive\nto the sun. Use at least sun-\nscreen factor 30 or higher.";
                         break;
                     case 3:
-                        factor = "Your skin sometimes burns and you sometimes get a tan.\nUse sunscreen factor 15 or higher";
+                        factor = "Your skin sometimes burns\nand you sometimes get a tan.\nUse sunscreen factor 15 or higher";
                         break;
                     case 4:
-                        factor = "You tan easily and don't burn often. But you are still at risk.\nUse sunscreen factor 15 or higher.";
+                        factor = "You tan easily and don't\nburn often. But you are still at risk.\nUse sunscreen factor 15 or higher.";
                         break;
                     case 5:
-                        factor = "You tan very easily and don't burn often, but you are still at risk.\nUse sunscreen factor 15 or higher.";
+                        factor = "You tan very easily and don't\nburn often, but you are still at risk.\nUse sunscreen factor 15 or higher.";
                         break;
                     case 6:
-                        factor = "Even if you don't burn,\npeople with dark skin are still at risk of getting skin cancer.\nUse sunscreen factor 15 or higher";
+                        factor = "Even if you don't burn,\npeople with dark skin are still at risk of getting\nskin cancer. Use sunscreen factor 15 or higher";
                         break;
                     default:
                         factor = "";

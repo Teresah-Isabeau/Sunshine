@@ -46,84 +46,86 @@
             // 
             // btnPoints
             // 
-            this.btnPoints.Location = new System.Drawing.Point(520, 14);
-            this.btnPoints.Margin = new System.Windows.Forms.Padding(2);
+            this.btnPoints.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(225)))), ((int)(((byte)(195)))));
+            this.btnPoints.Location = new System.Drawing.Point(16, 11);
+            this.btnPoints.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPoints.Name = "btnPoints";
-            this.btnPoints.Size = new System.Drawing.Size(56, 50);
+            this.btnPoints.Size = new System.Drawing.Size(75, 62);
             this.btnPoints.TabIndex = 0;
             this.btnPoints.Text = "Points";
-            this.btnPoints.UseVisualStyleBackColor = true;
+            this.btnPoints.UseVisualStyleBackColor = false;
             this.btnPoints.Click += new System.EventHandler(this.btnPoints_Click);
             // 
             // lbHome
             // 
             this.lbHome.AutoSize = true;
-            this.lbHome.Location = new System.Drawing.Point(232, 33);
-            this.lbHome.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbHome.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
+            this.lbHome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(115)))), ((int)(((byte)(104)))));
+            this.lbHome.Location = new System.Drawing.Point(112, 23);
             this.lbHome.Name = "lbHome";
-            this.lbHome.Size = new System.Drawing.Size(122, 13);
+            this.lbHome.Size = new System.Drawing.Size(140, 50);
             this.lbHome.TabIndex = 1;
-            this.lbHome.Text = "Goodmorning SunShine!";
+            this.lbHome.Text = "Goodmorning\r\nSunShine!";
+            this.lbHome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // lbTemp
             // 
             this.lbTemp.AutoSize = true;
-            this.lbTemp.Location = new System.Drawing.Point(103, 74);
-            this.lbTemp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbTemp.Location = new System.Drawing.Point(33, 155);
             this.lbTemp.Name = "lbTemp";
-            this.lbTemp.Size = new System.Drawing.Size(67, 13);
+            this.lbTemp.Size = new System.Drawing.Size(90, 17);
             this.lbTemp.TabIndex = 2;
             this.lbTemp.Text = "Temperature";
             // 
             // lbDate
             // 
             this.lbDate.AutoSize = true;
-            this.lbDate.Location = new System.Drawing.Point(103, 124);
-            this.lbDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbDate.Location = new System.Drawing.Point(33, 215);
             this.lbDate.Name = "lbDate";
-            this.lbDate.Size = new System.Drawing.Size(30, 13);
+            this.lbDate.Size = new System.Drawing.Size(38, 17);
             this.lbDate.TabIndex = 3;
             this.lbDate.Text = "Date";
             // 
             // lbUV
             // 
             this.lbUV.AutoSize = true;
-            this.lbUV.Location = new System.Drawing.Point(103, 99);
-            this.lbUV.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbUV.Location = new System.Drawing.Point(33, 185);
             this.lbUV.Name = "lbUV";
-            this.lbUV.Size = new System.Drawing.Size(22, 13);
+            this.lbUV.Size = new System.Drawing.Size(27, 17);
             this.lbUV.TabIndex = 4;
             this.lbUV.Text = "UV";
             // 
             // lbIndication
             // 
             this.lbIndication.AutoSize = true;
-            this.lbIndication.Location = new System.Drawing.Point(183, 271);
-            this.lbIndication.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbIndication.Location = new System.Drawing.Point(33, 485);
             this.lbIndication.Name = "lbIndication";
-            this.lbIndication.Size = new System.Drawing.Size(53, 13);
+            this.lbIndication.Size = new System.Drawing.Size(68, 17);
             this.lbIndication.TabIndex = 5;
             this.lbIndication.Text = "Indication";
             // 
             // btnProfile
             // 
-            this.btnProfile.Location = new System.Drawing.Point(12, 14);
-            this.btnProfile.Margin = new System.Windows.Forms.Padding(2);
+            this.btnProfile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(152)))), ((int)(((byte)(152)))));
+            this.btnProfile.Location = new System.Drawing.Point(270, 11);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(56, 50);
+            this.btnProfile.Size = new System.Drawing.Size(75, 62);
             this.btnProfile.TabIndex = 8;
             this.btnProfile.Text = "Profile";
-            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.UseVisualStyleBackColor = false;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btLogout
             // 
-            this.btLogout.Location = new System.Drawing.Point(12, 339);
+            this.btLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(115)))), ((int)(((byte)(104)))));
+            this.btLogout.Location = new System.Drawing.Point(82, 585);
+            this.btLogout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btLogout.Name = "btLogout";
-            this.btLogout.Size = new System.Drawing.Size(80, 31);
+            this.btLogout.Size = new System.Drawing.Size(107, 38);
             this.btLogout.TabIndex = 9;
             this.btLogout.Text = "Logout";
-            this.btLogout.UseVisualStyleBackColor = true;
+            this.btLogout.UseVisualStyleBackColor = false;
             this.btLogout.Click += new System.EventHandler(this.btLogout_Click);
             // 
             // timer1
@@ -133,10 +135,9 @@
             // lbSunscreen
             // 
             this.lbSunscreen.AutoSize = true;
-            this.lbSunscreen.Location = new System.Drawing.Point(182, 232);
-            this.lbSunscreen.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbSunscreen.Location = new System.Drawing.Point(33, 397);
             this.lbSunscreen.Name = "lbSunscreen";
-            this.lbSunscreen.Size = new System.Drawing.Size(94, 13);
+            this.lbSunscreen.Size = new System.Drawing.Size(124, 17);
             this.lbSunscreen.TabIndex = 11;
             this.lbSunscreen.Text = "Sunscreen factor: ";
             // 
@@ -147,26 +148,29 @@
             // lblOutOfSun
             // 
             this.lblOutOfSun.AutoSize = true;
-            this.lblOutOfSun.Location = new System.Drawing.Point(201, 196);
+            this.lblOutOfSun.Location = new System.Drawing.Point(33, 371);
+            this.lblOutOfSun.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOutOfSun.Name = "lblOutOfSun";
-            this.lblOutOfSun.Size = new System.Drawing.Size(35, 13);
+            this.lblOutOfSun.Size = new System.Drawing.Size(46, 17);
             this.lblOutOfSun.TabIndex = 12;
             this.lblOutOfSun.Text = "label1";
             // 
             // lbTime
             // 
             this.lbTime.AutoSize = true;
-            this.lbTime.Location = new System.Drawing.Point(103, 150);
+            this.lbTime.Location = new System.Drawing.Point(33, 245);
+            this.lbTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTime.Name = "lbTime";
-            this.lbTime.Size = new System.Drawing.Size(35, 13);
+            this.lbTime.Size = new System.Drawing.Size(46, 17);
             this.lbTime.TabIndex = 10;
             this.lbTime.Text = "label1";
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 382);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(225)))), ((int)(((byte)(120)))));
+            this.ClientSize = new System.Drawing.Size(357, 765);
             this.Controls.Add(this.lblOutOfSun);
             this.Controls.Add(this.lbSunscreen);
             this.Controls.Add(this.lbTime);
@@ -178,7 +182,7 @@
             this.Controls.Add(this.lbTemp);
             this.Controls.Add(this.lbHome);
             this.Controls.Add(this.btnPoints);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Home";
             this.Text = "Home";
             this.Load += new System.EventHandler(this.Home_Load);
