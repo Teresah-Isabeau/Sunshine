@@ -60,6 +60,7 @@ namespace Sunshine
             }
             else
             {
+                lbClaimedReward.Text = "Last claimed reward: \n" + listRewards.SelectedItem.ToString();
                 listRewards.Items.Remove(claimedReward);
             }
             lbPoints.Text = "Points: " + CreateAccount.NewUser.PointsOfUser();
