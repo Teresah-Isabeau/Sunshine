@@ -70,7 +70,7 @@
             // tbEmail
             // 
             this.tbEmail.Location = new System.Drawing.Point(215, 89);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(2);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(128, 20);
             this.tbEmail.TabIndex = 3;
@@ -78,15 +78,16 @@
             // tbPassword
             // 
             this.tbPassword.Location = new System.Drawing.Point(215, 126);
-            this.tbPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(2);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(128, 20);
             this.tbPassword.TabIndex = 4;
             // 
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(244, 213);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 34);
             this.btnLogin.TabIndex = 5;
@@ -97,7 +98,7 @@
             // btnNewAccount
             // 
             this.btnNewAccount.Location = new System.Drawing.Point(244, 252);
-            this.btnNewAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNewAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnNewAccount.Name = "btnNewAccount";
             this.btnNewAccount.Size = new System.Drawing.Size(75, 33);
             this.btnNewAccount.TabIndex = 6;
@@ -117,7 +118,7 @@
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbEmail);
             this.Controls.Add(this.lbLogin);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);

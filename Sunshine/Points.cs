@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace RewardSystem
 {
-    //ToDo: bind the point given to the notification
 
     /// <summary>
     /// method getPoints gives the user points
@@ -27,12 +26,6 @@ namespace RewardSystem
             level = 1;
             pointsNeededToLevelUp = 10;
         }
-        public void ShowPointsAndLevel()
-        {
-            Console.WriteLine("Total Points: " + totalPoints);
-            Console.WriteLine("Level: " + level);
-        }
-
         public int GetPoints()
         {
             totalPoints += 5;
@@ -56,7 +49,22 @@ namespace RewardSystem
             }
             return level;
         }
-
+        public bool EnoughPointsForReward(int pointCost)
+        {
+            if (pointCost > totalPoints)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public int RedeemPoints(int pointCost)
+        {
+            totalPoints -= pointCost;
+            return totalPoints;
+        }
     }
     public enum Item
     {
@@ -81,6 +89,7 @@ namespace RewardSystem
     ///
     public class Coupon : Points
     {
+
         public List<List<string>> rewardList { get; private set; }
         public Random randomEnumItem { get; private set; }
         public string rewardChoice { get; private set; }
@@ -92,15 +101,31 @@ namespace RewardSystem
         public Random coupon { get; private set; }
         public int saveCoupon { get; private set; }
 
-        
+        private string selected;
+
+        public Item randomCouponItem { get; private set; }
+            
 
         public Coupon()
         {
             randomPointAmount = new Random();
             randomEnumItem = new Random();
             rewardList = new List<List<string>>();
-            rewardCount = 1;
+            rewardList.Add(new List<string> { "1", "Sunscreen", "6", "30" });
+            rewardCount = 2;
             coupon = new Random();
+        }
+        public Coupon(int levelNum, Item randomItem, int coupon, int pointCost)
+        {
+            levelNum = rewardCount;
+            randomItem = randomCouponItem;
+            coupon = saveCoupon;
+            pointCost = savePointCost;
+        }
+        public Item GenerateRandomItem()
+        {
+            randomCouponItem = (Item)(new Random()).Next(0, 3);
+            return randomCouponItem;
         }
 
         //Generics allow you to define the specification of the data type of programming elements in a class or a method,
@@ -121,55 +146,35 @@ namespace RewardSystem
             addPoints = GeneratePointCost();
             if (leveledUp)
             {
-                rewardList.Add(new List<string> { rewardCount.ToString(), addPoints.ToString(), value.ToString(),
-                    addCoupon.ToString() });
+                rewardList.Add(new List<string> {rewardCount.ToString() ,value.ToString(), addCoupon.ToString(),
+                    addPoints.ToString() });
                 rewardCount++;
             }
             return rewardList;
         }
-        public void ShowRewards()
+        public string Claim(string chosenReward)
         {
-
             foreach (List<string> sublist in rewardList)
             {
-                Console.WriteLine(sublist[0] + " " + sublist[1] + " " + sublist[2] + " " + sublist[3] + "%");
-            }
-        }
-        public void ChooseReward()
-        {
-            if (rewardList.Count == 0)
-            {
-                Console.WriteLine("No rewards");
-            }
-            else
-            {
-                Console.WriteLine("Enter the number of the reward or type 'exit' to go back");
-                Console.WriteLine("Rewards: ");
-                ShowRewards();
-                rewardChoice = Console.ReadLine();
-                foreach (List<string> sub in rewardList)
+                if (chosenReward == "[" + sublist[0] + "] " + sublist[1] + " " + sublist[2] + "%" + " " + "Point Cost: " + sublist[3])
                 {
-                    if (rewardChoice == sub[0])
+                    if (EnoughPointsForReward(int.Parse(sublist[3])))
                     {
-                        Console.Clear();
-                        if (EnoughPointsForReward(int.Parse(sub[1])))
-                        {
-                            RedeemPoints(int.Parse(sub[1]));
-                            Console.WriteLine("You chose reward: \n" + sub[0] + " " + sub[1] + " " + sub[2] + " " + sub[3] + "%");
-                            rewardList.Remove(sub);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Not enough points!");
-                        }
-                        break;
+                        selected = chosenReward;
+                        RedeemPoints(int.Parse(sublist[3]));
+                        rewardList.Remove(sublist);
                     }
+                    else
+                    {
+                        selected = "Not enough points!";
+                    }
+                    break;
                 }
             }
+            return selected;
         }
         public int GenerateCoupon()
         {
-
             saveCoupon = coupon.Next(5, 25);
             return saveCoupon;
         }
@@ -200,21 +205,6 @@ namespace RewardSystem
         }
 
 
-        public bool EnoughPointsForReward(int pointCost)
-        {
-            if (pointCost > totalPoints)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-        public void RedeemPoints(int pointCost)
-        {
-            totalPoints -= pointCost;
-        }
     }
 
 }
